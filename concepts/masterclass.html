@@ -1,0 +1,1961 @@
+<!--
+    artifact generator: C:\My\wizzi\stfnbssl\wizzi.plugins\packages\wizzi.plugin.html\lib\artifacts\html\document\gen\main.js
+    package: @wizzi/plugin.html@0.8.10
+    primary source IttfDocument: C:\My\wizzi\stfnbssl\lavori\logbot-cybersecurity\packages\digital-core\.wizzi\site\concepts\masterclass.html.ittf
+    utc time: Tue, 10 Jun 2025 15:35:22 GMT
+-->
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cybersecurity: Offerta Servizi Strategica</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            -webkit-border-radius: 20px;
+            -khtml-border-radius: 20px;
+            -moz-border-radius: 20px;
+            -o-border-radius: 20px;
+            border-radius: 20px;
+            -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            -o-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            -webkit-animation: fadeInUp 0.8s ease-out;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        @keyframes fadeInUp {
+            fadeInUp from {
+                opacity: 0;
+                -webkit-transform: translateY(30px);
+                -ms-transition: translateY(30px);
+                transform: translateY(30px);
+            }
+            fadeInUp to {
+                opacity: 1;
+                -webkit-transform: translateY(0);
+                -ms-transition: translateY(0);
+                transform: translateY(0);
+            }
+        }
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            -webkit-animation: float 20s linear infinite;
+            animation: float 20s linear infinite;
+        }
+        @keyframes float {
+            float 0% {
+                -webkit-transform: translate(-50%, -50%) rotate(0deg);
+                -ms-transition: translate(-50%, -50%) rotate(0deg);
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            float 100% {
+                -webkit-transform: translate(-50%, -50%) rotate(360deg);
+                -ms-transition: translate(-50%, -50%) rotate(360deg);
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        .category-badge {
+            display: inline-block;
+            background: rgba(52, 152, 219, 0.2);
+            color: #3498db;
+            padding: 8px 16px;
+            -webkit-border-radius: 20px;
+            -khtml-border-radius: 20px;
+            -moz-border-radius: 20px;
+            -o-border-radius: 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(52, 152, 219, 0.3);
+        }
+        .main-title {
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #fff, #ecf0f1);
+            background-clip: text;
+        }
+        .timestamp {
+            opacity: 0.8;
+            font-size: 0.95em;
+        }
+        .tags {
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 12px;
+            -webkit-border-radius: 15px;
+            -khtml-border-radius: 15px;
+            -moz-border-radius: 15px;
+            -o-border-radius: 15px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+        .tag:hover {
+            background: rgba(255, 255, 255, 0.3);
+            -webkit-transform: translateY(-2px);
+            -ms-transition: translateY(-2px);
+            transform: translateY(-2px);
+        }
+        .content {
+            padding: 40px;
+        }
+        .section {
+            margin-bottom: 50px;
+            opacity: 0;
+            -webkit-animation: slideInLeft 0.8s ease-out forwards;
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+        .section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        @keyframes slideInLeft {
+            slideInLeft from {
+                opacity: 0;
+                -webkit-transform: translateX(-30px);
+                -ms-transition: translateX(-30px);
+                transform: translateX(-30px);
+            }
+            slideInLeft to {
+                opacity: 1;
+                -webkit-transform: translateX(0);
+                -ms-transition: translateX(0);
+                transform: translateX(0);
+            }
+        }
+        .section-title {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            gap: 12px;
+        }
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            -webkit-border-radius: 50%;
+            -khtml-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -o-border-radius: 50%;
+            border-radius: 50%;
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            -webkit-flex-shrink: 0;
+            -ms-flex-negative: 0;
+            flex-shrink: 0;
+        }
+        .section-description {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(52, 152, 219, 0.05);
+            border-left: 4px solid #3498db;
+            -webkit-border-radius: 0 10px 10px 0;
+            -khtml-border-radius: 0 10px 10px 0;
+            -moz-border-radius: 0 10px 10px 0;
+            -o-border-radius: 0 10px 10px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        .points-container {
+            display: grid;
+            gap: 25px;
+        }
+        .point-card {
+            background: white;
+            -webkit-border-radius: 15px;
+            -khtml-border-radius: 15px;
+            -moz-border-radius: 15px;
+            -o-border-radius: 15px;
+            border-radius: 15px;
+            padding: 25px;
+            -webkit-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            -moz-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            -o-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(52, 152, 219, 0.1);
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .point-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            -webkit-transform: scaleX(0);
+            -ms-transition: scaleX(0);
+            transform: scaleX(0);
+            -webkit-transition: transform 0.3s ease;
+            -moz-transition: transform 0.3s ease;
+            -o-transition: transform 0.3s ease;
+            transition: transform 0.3s ease;
+        }
+        .point-card:hover {
+            -webkit-transform: translateY(-5px);
+            -ms-transition: translateY(-5px);
+            transform: translateY(-5px);
+            -webkit-box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            -moz-box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            -o-box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        .point-card:hover::before {
+            -webkit-transform: scaleX(1);
+            -ms-transition: scaleX(1);
+            transform: scaleX(1);
+        }
+        .point-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .point-icon {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            -webkit-border-radius: 50%;
+            -khtml-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -o-border-radius: 50%;
+            border-radius: 50%;
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        .sub-points {
+            list-style: none;
+            padding: 0;
+        }
+        .sub-point {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #666;
+            line-height: 1.6;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .sub-point:last-child {
+            border-bottom: none;
+        }
+        .sub-point::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .cyber-visual {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.03;
+        }
+        .cyber-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: -webkit-linear-gradient(rgba(52, 152, 219, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(52, 152, 219, 0.1) 1px, transparent 1px);
+            background-image: -moz-linear-gradient(rgba(52, 152, 219, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(52, 152, 219, 0.1) 1px, transparent 1px);
+            background-image: -o-linear-gradient(rgba(52, 152, 219, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(52, 152, 219, 0.1) 1px, transparent 1px);
+            background-image: -ms-linear-gradient(rgba(52, 152, 219, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(52, 152, 219, 0.1) 1px, transparent 1px);
+            background-image: linear-gradient(rgba(52, 152, 219, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(52, 152, 219, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            -webkit-animation: gridMove 30s linear infinite;
+            animation: gridMove 30s linear infinite;
+        }
+        @keyframes gridMove {
+            gridMove 0% {
+                -webkit-transform: translate(0, 0);
+                -ms-transition: translate(0, 0);
+                transform: translate(0, 0);
+            }
+            gridMove 100% {
+                -webkit-transform: translate(50px, 50px);
+                -ms-transition: translate(50px, 50px);
+                transform: translate(50px, 50px);
+            }
+        }
+        .floating-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .floating-icon {
+            position: absolute;
+            color: rgba(52, 152, 219, 0.1);
+            font-size: 24px;
+            -webkit-animation: float-icon 15s linear infinite;
+            animation: float-icon 15s linear infinite;
+        }
+        .floating-icon:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        .floating-icon:nth-child(2) {
+            top: 20%;
+            left: 80%;
+            animation-delay: 3s;
+        }
+        .floating-icon:nth-child(3) {
+            top: 60%;
+            left: 20%;
+            animation-delay: 6s;
+        }
+        .floating-icon:nth-child(4) {
+            top: 80%;
+            left: 70%;
+            animation-delay: 9s;
+        }
+        @keyframes float-icon {
+            float-icon 0% {
+                -webkit-transform: translateY(0px) rotate(0deg);
+                -ms-transition: translateY(0px) rotate(0deg);
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0;
+            }
+            float-icon 10% {
+                opacity: 1;
+            }
+            float-icon 90% {
+                opacity: 1;
+            }
+            float-icon 100% {
+                -webkit-transform: translateY(-100px) rotate(360deg);
+                -ms-transition: translateY(-100px) rotate(360deg);
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                -webkit-border-radius: 15px;
+                -khtml-border-radius: 15px;
+                -moz-border-radius: 15px;
+                -o-border-radius: 15px;
+                border-radius: 15px;
+            }
+            .header {
+                padding: 30px 20px;
+            }
+            .main-title {
+                font-size: 2em;
+            }
+            .content {
+                padding: 30px 20px;
+            }
+            .tags {
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cyber-visual">
+        <div class="cyber-grid"></div>
+        <div class="floating-icons">
+            <div class="floating-icon">🛡️</div>
+            <div class="floating-icon">🔒</div>
+            <div class="floating-icon">🔐</div>
+            <div class="floating-icon">⚡</div>
+        </div>
+    </div>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="category-badge">Cyber Security</div>
+                <h1 class="main-title">Masterclass - Analisi Strategica e Pianificazione della Sicurezza</h1>
+                <div class="timestamp">📅 2025-06-10T08:23:00Z</div>
+                <div class="tags">
+                    <span class="tag">#cybersecurity</span>
+                    <span class="tag">#strategia</span>
+                    <span class="tag">#servizi</span>
+                    <span class="tag">#classificazione</span>
+                </div>
+            </div>
+        </header>
+        <div class="content">
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">1</div>
+                    Affrontare la Complessità
+                </h2>
+                <div class="section-description">
+                    Di fronte a un problema complesso come la realizzazione di un Security Program, la prima domanda è: da dove cominciamo?
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Tante, troppe le domande e le risposte da cercare, tutte insieme.
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Occorre un percorso per orientarci.
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Ci servono le domande da cui partire.
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Immagine di un labirinto o di un puzzle incompleto, con una freccia che indica un percorso.
+                        </h3>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">2</div>
+                    Saltare, per ora, le domande troppo fondamentali
+                </h2>
+                <div class="section-description">
+                    
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Non serve chiedersi ora:
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Da dove veniamo?
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Dove stiamo andando?
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Troppo dispersive ora. Ma torneranno quando dovrete affrontare a livello strategico la situazione della vostra azienda
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Ne faremo un cenno
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Due frecce curve con “Instruction-Driven Systems” e “Reinvention by Agentic AI” barrate in rosso. Al centro, un cerchio con “Focus” in evidenza.
+                        </h3>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">3</div>
+                    Le Domande Inevitabili: le “solite”
+                </h2>
+                <div class="section-description">
+                    Non possiamo sfuggire a:
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Che cosa?
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Perché?
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Come?
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Quando?
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Quattro caselle o cerchi con “Che cosa?”, “Perché?”, “Come?”, “Quando?” in colori distinti. Sfondo con un’immagine sfocata di un impianto industriale o una rete OT.
+                        </h3>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">4</div>
+                    Security Program
+                </h2>
+                <div class="section-description">
+                    
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Che cosa è? Un piano strutturato per proteggere IT e OT.
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Perché serve? Per affrontare minacce crescenti.
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Come si realizza? Con standard come IEC 62443.
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Quando agire? Ora, prima che sia troppo tardi.
+                        </h3>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">5</div>
+                    Da dove iniziare?
+                </h2>
+                <div class="section-description">
+                    
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Partire dal Che cosa? Troppi dettagli, troppo presto.
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Partire dal Come? Può intimorire.
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Il Perché deve spaventarci e motivarci.
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Il Quando è impegnativo ma contiene anche la chiave per un percorso chiaro. E poi più ci si avvicina al quando e più aumenta la pressione a mettere ordine nelle cose da fare.
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Vedi https://x.com/i/grok/share/2lVCJbIaNTPBiwoungyeNbNd1
+                        </h3>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">6</div>
+                    Il percorso proposto
+                </h2>
+                <div class="section-description">
+                    
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Iniziamo dal Perché: la sicurezza OT è una priorità strategica.
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Poi passiamo al Quando: una timeline degli stati di attuazione aiuterà a capire l'ordine da seguire nel come.
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Affronteremo il che cosa sempre sulla timeline, la IEC 62443 è la guida dei concetti fondamentali per capire.
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Per ultimo il come, ancora con la timeline ma con riferimento ad altri framework e risorse (NIST, OWASP, Security Ecosystem).
+                        </h3>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">7</div>
+                    Contesto e Conferme dagli Analisti
+                </h2>
+                <div class="section-description">
+                    Gli analisti di cybersecurity in ambito ICS/OT concordano sull'evoluzione del panorama delle minacce, richiedendo un approccio strategico e integrato, con implicazioni geopolitiche, economiche e sociali [2].
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            **NIS2 e minacce geopolitiche**: La direttiva NIS2 risponde all'aumento di attacchi informatici legati alla digitalizzazione e ai conflitti geopolitici, come quelli derivanti dal conflitto Russia-Ucraina [2]. Non è solo una questione di conformità, ma un'opportunità per costruire resilienza contro attori statali e non statali, promuovendo una cultura di gestione proattiva del rischio e reporting rapido degli incidenti [2].
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            **IEC 62443 e difesa tecnica**: È riconosciuto come uno standard fondamentale per la sicurezza OT, offrendo un quadro tecnico per proteggere i sistemi di automazione industriale (IACS) [3]. L'integrazione di IEC 62443 con NIS2 consente di tradurre requisiti normativi in misure tecniche concrete, come la segmentazione di rete e la difesa in profondità, vista come una risposta diretta a minacce sofisticate (inclusi attacchi ransomware e sabotaggi da parte di attori statali) [3].
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            **ISO/IEC 27001 e gestione organizzativa**: Fornisce un framework per la gestione della sicurezza delle informazioni a livello organizzativo [4]. L'allineamento di ISO 27001 con NIS2 rafforza la governance aziendale, imponendo una responsabilità diretta al management e una cultura di consapevolezza del rischio, particolarmente rilevante per contrastare le minacce interne (insider threats) e gli attacchi coordinati dalla criminalità organizzata [4].
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            **Regolamento Macchine e supply chain**: Il Regolamento Macchine (EU 2023/1230) e il Cyber Resilience Act (CRA) estendono i requisiti di sicurezza ai produttori di hardware e software, sottolineando la necessità di proteggere l'intera filiera [5]. Questi regolamenti sono visti come complementari a NIS2 e IEC 62443, creando un ecosistema di sicurezza che affronta le minacce a ogni livello, dalla progettazione alla gestione operativa [5].
+                        </h3>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">8</div>
+                    Minacce Specifiche e Necessità di Proattività
+                </h2>
+                <div class="section-description">
+                    Gli analisti confermano che le minacce in ambito ICS/OT sono sempre più legate a specifici attori e contesti [6].
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            **Criminalità organizzata**: Il ransomware rappresenta il 32% delle violazioni, con costi globali superiori ai 20 miliardi di dollari nel 2022. Questi attacchi sono spesso orchestrati da gruppi criminali che sfruttano vulnerabilità in ambienti OT poco protetti [6].
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            **Terrorismo e attori statali**: Attacchi come Industroyer, Triton e INCONTROLLER dimostrano la capacità di attori statali di sabotare infrastrutture critiche, con impatti diretti su civili e servizi essenziali [6].
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            **Geopolitica**: Il conflitto Russia-Ucraina e le tensioni con attori come la Cina hanno intensificato gli attacchi mirati a infrastrutture critiche, come reti energetiche e trasporti [7]. La convergenza IT/OT aumenta la superficie di attacco, richiedendo standard come IEC 62443 per garantire visibilità e protezione [7].
+                        </h3>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">9</div>
+                    Approccio Proattivo e 'Irregimentazione'
+                </h2>
+                <div class="section-description">
+                    L'idea di un 'sistematico programma di difesa' è esplicitamente sostenuta dagli analisti del settore [8].
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            **Visibilità e gestione del rischio**: Daniel dos Santos di Forescout sottolinea che 'non si può proteggere ciò che non si vede'. La visibilità granulare su ogni dispositivo (IT, OT, IoT) è fondamentale per prevenire attacchi che sfruttano dispositivi vulnerabili [8].
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            **Cultura di sicurezza**: La NIS2 e ISO 27001 promuovono una cultura di sicurezza che coinvolge il top management, con sanzioni severe (fino a 10 milioni di euro o il 2% del fatturato globale) per non conformità, spingendo le aziende a investire in formazione e consapevolezza [8].
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            **Collaborazione e standardizzazione**: Il NIS Cooperation Group e l'ENISA sottolineano l'importanza della cooperazione transnazionale e dell'adozione di standard internazionali (IEC 62443, NIST, ISO 27001) per armonizzare le difese contro minacce globali [9].
+                        </h3>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">10</div>
+                    Criticità e Sfide
+                </h2>
+                <div class="section-description">
+                    Nonostante il consenso sulla necessità di un approccio proattivo, gli analisti segnalano diverse sfide [9].
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            **Frammentazione normativa**: In Europa, la trasposizione di NIS2 in leggi nazionali crea discrepanze, con una lamentata mancanza di chiarezza su 'chi deve fare cosa e quando' [9, 10].
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            **Carenza di competenze**: La complessità di implementare standard come IEC 62443 richiede professionisti qualificati, ma il settore soffre di un gap di talenti [10].
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            **Tempi stretti**: Con la scadenza di ottobre 2024 per NIS2, molte organizzazioni sono in ritardo, rischiando sanzioni significative [10].
+                        </h3>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">11</div>
+                    Conclusione
+                </h2>
+                <div class="section-description">
+                    L'interpretazione strategica della difesa cyber è pienamente condivisa dagli analisti del settore [10].
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Standard come **IEC 62443 e ISO 27001**, insieme a normative come **NIS2 e il Regolamento Macchine**, sono percepiti come strumenti per una **difesa sistematica e proattiva** contro un panorama di minacce sempre più complesso, che include criminalità organizzata, terrorismo e avversari geopolitici [10].
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Gli esperti sottolineano che il successo dipende da un'**integrazione di misure tecniche, organizzative e culturali**, con un'enfasi su **visibilità, resilienza e collaborazione** [10].
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Tuttavia, le sfide legate a frammentazione normativa e carenza di competenze richiedono un **impegno continuo** per tradurre queste 'chiamate alle armi' in realtà operative [10].
+                        </h3>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">12</div>
+                    Fase 1: Contemplativa
+                </h2>
+                <div class="section-description">
+                    Sensibilizzazione e studio iniziale
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Esplorazione iniziale dei rischi cybersecurity e studio dello standard.
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Contesto: L’organizzazione è consapevole dei rischi cybersecurity per gli IACS, ma non ha ancora preso una decisione formale per avviare un Security Program. L’obiettivo è esplorare la necessità di sicurezza, comprendere i problemi specifici (es. vulnerabilità di sistemi legacy) e valutare il valore di un approccio strutturato.
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Attività chiave: Documentazione, studio, formazione
+                        </h3>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">13</div>
+                    Fase 1: Contemplativa - Attività
+                </h2>
+                <div class="section-description">
+                    
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Attività tipiche
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Studio dello standard tramite corsi di formazione o workshop</li>
+                            <li class="sub-point">Analisi preliminare delle vulnerabilità o incidenti passati</li>
+                            <li class="sub-point">Coinvolgimento di consulenti esterni per una valutazione iniziale</li>
+                            <li class="sub-point">Creazione di materiali formativi per il management o il personale tecnico</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Parti rilevanti dello standard
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">IEC 62443-1-1: Introduzione a concetti fondamentali (FR, Security Levels, zone e condotti)</li>
+                            <li class="sub-point">IEC 62443-1-2: Glossario per la terminologia</li>
+                            <li class="sub-point">IEC 62443-1-4: Panoramica del ciclo di vita della sicurezza</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">14</div>
+                    Fase 1: Contemplativa - Risultati
+                </h2>
+                <div class="section-description">
+                    
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Stakeholders
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Management: Necessita di una panoramica di alto livello per capire l’importanza della sicurezza</li>
+                            <li class="sub-point">Responsabili tecnici: Studiano lo standard per identificare problemi specifici</li>
+                            <li class="sub-point">Team di conformità: Esplorano collegamenti con normative esistenti</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Risultati attesi
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Comprensione di base dei concetti IEC 62443</li>
+                            <li class="sub-point">Identificazione preliminare dei rischi</li>
+                            <li class="sub-point">Sensibilizzazione del management</li>
+                            <li class="sub-point">Valutazione della necessità di un Security Program</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">15</div>
+                    Fase 2: Determinazione
+                </h2>
+                <div class="section-description">
+                    Decisione e commitment
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Decisione di avviare il Security Program con approvazione del management.
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Contesto: L’organizzazione passa dalla consapevolezza alla determinazione di agire, spinta da incidenti, requisiti normativi o pressioni di mercato. L’obiettivo è ottenere l’approvazione del management per finanziare e avviare un Security Program, definendo obiettivi strategici e risorse.
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Attività chiave: Motivazione/call to action
+                        </h3>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">16</div>
+                    Fase 2: Determinazione - Attività
+                </h2>
+                <div class="section-description">
+                    
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Attività tipiche
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Presentazione al management con analisi costi-benefici</li>
+                            <li class="sub-point">Identificazione preliminare dei rischi (es. usando IEC 62443-3-2)</li>
+                            <li class="sub-point">Definizione di un budget e di un team dedicato</li>
+                            <li class="sub-point">Allineamento con normative o standard di settore (es. GDPR, NERC CIP)</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Parti rilevanti dello standard
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">IEC 62443-1-1: Visione di alto livello per comunicare i benefici della sicurezza</li>
+                            <li class="sub-point">IEC 62443-2-1: Descrizione del CSMS per pianificare il programma</li>
+                            <li class="sub-point">IEC 62443-3-2: Introduzione alla valutazione del rischio per supportare il caso di business</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">17</div>
+                    Fase 2: Determinazione - Risultati
+                </h2>
+                <div class="section-description">
+                    
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Stakeholders
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Management: Prende la decisione finale e approva il budget</li>
+                            <li class="sub-point">Responsabili della sicurezza: Preparano il caso di business</li>
+                            <li class="sub-point">Team legale/conformità: Valutano requisiti normativi</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Risultati attesi
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Operatività continua e sicura</li>
+                            <li class="sub-point">Risposta efficace agli incidenti</li>
+                            <li class="sub-point">Conformità mantenuta nel tempo</li>
+                            <li class="sub-point">Miglioramento continuo del programma</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">18</div>
+                    Fase 3: Pianificazione e progettazione
+                </h2>
+                <div class="section-description">
+                    Definizione del Security Program
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Valutazione del rischio e progettazione del programma di sicurezza.
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Contesto: Il Security Program è stato approvato, e l’organizzazione pianifica come implementarlo. L’obiettivo è condurre una valutazione del rischio, definire zone e condotti, assegnare Security Levels e progettare un sistema sicuro.
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Attività chiave: Gestione del rischio
+                        </h3>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">19</div>
+                    Fase 3: Pianificazione e progettazione - Attività
+                </h2>
+                <div class="section-description">
+                    
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Attività tipiche
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Valutazione del rischio per identificare minacce, vulnerabilità e conseguenze</li>
+                            <li class="sub-point">Definizione di zone e condotti per segmentare la rete</li>
+                            <li class="sub-point">Selezione di contromisure basate sugli FR (es. autenticazione per FR 1, segmentazione per FR 5)</li>
+                            <li class="sub-point">Coinvolgimento di fornitori per garantire componenti conformi</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Parti rilevanti dello standard
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">IEC 62443-3-2: Guida alla valutazione del rischio e assegnazione degli SL-T</li>
+                            <li class="sub-point">IEC 62443-3-3: Specifica dei System Requirements (SR) e Requirement Enhancements (RE) per gli FR</li>
+                            <li class="sub-point">IEC 62443-4-1: Secure Product Development Lifecycle per i fornitori</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">20</div>
+                    Fase 3: Pianificazione e progettazione - Risultati
+                </h2>
+                <div class="section-description">
+                    
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Stakeholders
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Responsabili della sicurezza: Conducono la valutazione del rischio</li>
+                            <li class="sub-point">Ingegneri di sistema: Definiscono l’architettura di sicurezza</li>
+                            <li class="sub-point">Fornitori/integratori: Supportano la progettazione di componenti e sistemi</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Risultati attesi
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Approvazione formale del Security Program</li>
+                            <li class="sub-point">Assegnazione di budget e risorse</li>
+                            <li class="sub-point">Definizione del team di progetto</li>
+                            <li class="sub-point">Allineamento con obiettivi strategici</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">21</div>
+                    Fase 4: Implementazione e avvio
+                </h2>
+                <div class="section-description">
+                    Realizzazione del Security Program
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Configurazione di sistemi e processi per il programma di sicurezza.
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Contesto: Il programma viene implementato, con l’installazione di sistemi, configurazione di componenti e definizione di processi operativi. L’obiettivo è tradurre i piani in misure concrete, allineate agli FR e agli SL.
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Attività chiave: Requisiti Fondamentali (FR)
+                        </h3>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">22</div>
+                    Fase 4: Implementazione e avvio - Attività
+                </h2>
+                <div class="section-description">
+                    
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Attività tipiche
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Configurazione di autenticazione e controllo accessi (FR 1, FR 2)</li>
+                            <li class="sub-point">Implementazione di segmentazione di rete (FR 5)</li>
+                            <li class="sub-point">Installazione di sistemi di monitoraggio e risposta agli incidenti (FR 6)</li>
+                            <li class="sub-point">Verifica della conformità dei componenti (es. PLC conformi a IEC 62443-4-2)</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Parti rilevanti dello standard
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">IEC 62443-3-3: Dettaglio di SR e RE per i sistemi</li>
+                            <li class="sub-point">IEC 62443-4-2: Specifica dei CR per i componenti</li>
+                            <li class="sub-point">IEC 62443-2-4: Guida per i fornitori di servizi durante l’implementazione</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">23</div>
+                    Fase 4: Implementazione e avvio - Risultati
+                </h2>
+                <div class="section-description">
+                    
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Stakeholders
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Ingegneri di sistema: Configurano sistemi e reti</li>
+                            <li class="sub-point">Fornitori/integratori: Forniscono e installano componenti sicuri</li>
+                            <li class="sub-point">Team di sicurezza: Supervisionano l’implementazione</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Risultati attesi
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Sistemi configurati secondo gli FR</li>
+                            <li class="sub-point">Componenti certificati installati</li>
+                            <li class="sub-point">Processi operativi definiti</li>
+                            <li class="sub-point">Sistema di monitoraggio attivo</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">24</div>
+                    Fase 5: Operatività e manutenzione
+                </h2>
+                <div class="section-description">
+                    Programma funzionante e a regime
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Gestione continua del programma con monitoraggio e manutenzione.
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Contesto: Il Security Program è pienamente operativo, con processi e tecnologie in funzione. L’obiettivo è mantenere la sicurezza nel tempo, rispondere agli incidenti, aggiornare i sistemi e verificare l’efficacia delle misure.
+                        </h3>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Attività chiave: Gestione del ciclo di vita
+                        </h3>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">25</div>
+                    Fase 5: Operatività e manutenzione - Attività
+                </h2>
+                <div class="section-description">
+                    
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Attività tipiche
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Monitoraggio continuo degli incidenti (FR 6)</li>
+                            <li class="sub-point">Applicazione di patch e aggiornamenti (FR 7)</li>
+                            <li class="sub-point">Audit regolari per verificare la conformità (es. ISASecure)</li>
+                            <li class="sub-point">Formazione continua del personale</li>
+                            <li class="sub-point">Revisione periodica dei rischi e adeguamento delle contromisure</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Parti rilevanti dello standard
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">IEC 62443-2-1: Processi operativi per il CSMS (es. patch management, monitoraggio)</li>
+                            <li class="sub-point">IEC 62443-2-4: Requisiti per i fornitori di servizi di manutenzione</li>
+                            <li class="sub-point">IEC 62443-1-3: Metriche per valutare l’efficacia</li>
+                            <li class="sub-point">IEC 62443-3-3 e 4-2: Aggiornamenti di sistemi e componenti</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">26</div>
+                    Fase 5: Operatività e manutenzione - Risultati
+                </h2>
+                <div class="section-description">
+                    
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Stakeholders
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Team di sicurezza: Gestisce il monitoraggio e la risposta agli incidenti</li>
+                            <li class="sub-point">Responsabili operativi: Implementano processi di manutenzione</li>
+                            <li class="sub-point">Fornitori di servizi: Supportano aggiornamenti e manutenzione</li>
+                            <li class="sub-point">Auditor: Conducono verifiche di conformità</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Risultati attesi
+                        </h3>
+                        <ul class="sub-points"></ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">27</div>
+                    Tolleranza al rischio: la postura filosofica dell'organizzazione
+                </h2>
+                <div class="section-description">
+                    La tolleranza al rischio rappresenta il livello di rischio che un'organizzazione è disposta ad accettare per raggiungere i propri obiettivi operativi, economici o strategici. Nel contesto della IEC 62443, è un parametro fondamentale per determinare i Security Levels necessari per un sistema o una zona [1].
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Concetto di Tolleranza al Rischio
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">È una misura della volontà di un'organizzazione di convivere con l'incertezza [1].</li>
+                            <li class="sub-point">Non è solo un calcolo matematico, ma una scelta che riflette la cultura aziendale, le priorità strategiche e il contesto operativo [1].</li>
+                            <li class="sub-point">Esempio: un'organizzazione che gestisce infrastrutture critiche avrà una tolleranza al rischio molto bassa, mentre un'azienda meno critica potrebbe accettare rischi maggiori per ridurre i costi [1].</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Filosofia della Tolleranza al Rischio
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Può essere vista come un'espressione del rapporto tra libertà e controllo: accettare un certo livello di rischio significa esercitare la libertà di operare in un ambiente incerto, ma implica anche la rinuncia a un controllo totale sulla sicurezza [2].</li>
+                            <li class="sub-point">Introduce una dimensione esistenziale: il rischio è intrinseco all'agire umano, e la tolleranza al rischio riflette il coraggio (o la prudenza) di un'organizzazione nel confrontarsi con l'imprevedibilità [2].</li>
+                            <li class="sub-point">È un atto di responsabilità etica, poiché le scelte di un'organizzazione possono avere conseguenze su dipendenti, clienti, ambiente e società [2].</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">28</div>
+                    Livello di confidenza: la fiducia come pilastro della sicurezza
+                </h2>
+                <div class="section-description">
+                    Il livello di confidenza si riferisce alla percezione che un'organizzazione (o un asset owner) ha della robustezza di un sistema o prodotto rispetto alle minacce. Nel contesto della IEC 62443, è influenzato dalla qualità dei controlli implementati, dai Security Levels raggiunti e dalla trasparenza delle informazioni fornite dai produttori [3].
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Concetto di Livello di Confidenza
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">È un ponte tra la realtà oggettiva (le misure di sicurezza effettive) e la percezione soggettiva (la fiducia che l'organizzazione ripone in esse) [3].</li>
+                            <li class="sub-point">Non basta che un sistema sia sicuro; l'asset owner deve credere che lo sia, sulla base di evidenze, certificazioni o comunicazioni credibili [3].</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Filosofia del Livello di Confidenza
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Richiama il concetto di fiducia, un elemento centrale in ogni sistema sociale e tecnico [4].</li>
+                            <li class="sub-point">La fiducia non è mai puramente razionale: è un atto di fede informato, che si basa su prove ma anche su narrazioni, reputazione e contesto culturale [4].</li>
+                            <li class="sub-point">In termini heideggeriani, la confidenza è un modo di 'essere-nel-mondo' dell'organizzazione [4].</li>
+                            <li class="sub-point">La mancanza di confidenza può portare a un approccio iperprudente (es. sovrainvestimenti in sicurezza) o, al contrario, a una sottovalutazione del rischio, con conseguenze potenzialmente catastrofiche [4].</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">29</div>
+                    Threat-Risk Assessment (TRA): la razionalità al servizio dell'incertezza
+                </h2>
+                <div class="section-description">
+                    Il Threat-Risk Assessment è il processo sistematico di identificazione, analisi e valutazione delle minacce e dei rischi per un sistema ICS. Nella IEC 62443, il TRA è il punto di partenza per definire i Security Levels target, poiché mappa le minacce potenziali e il loro impatto in base alla criticità del sistema [5].
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Concetto di TRA
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">È un esercizio di razionalità applicata all'incertezza, cercando di quantificare l'inquantificabile [5].</li>
+                            <li class="sub-point">Non è un processo puramente oggettivo: le ipotesi alla base del TRA riflettono le percezioni e le priorità dell'organizzazione [5].</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Filosofia del TRA
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Rappresenta un tentativo di dominare l'incertezza ontologica del mondo attraverso la ragione (un atto cartesiano) [6].</li>
+                            <li class="sub-point">Non elimina l'incertezza, ma la gestisce, introducendo una tensione tra determinismo (pretesa di prevedere ogni rischio) e contingenza (impossibilità di conoscere tutte le minacce future) [6].</li>
+                            <li class="sub-point">Questo processo riflette una dimensione etica, poiché le scelte fatte durante il TRA possono influenzare la sicurezza di persone e infrastrutture [6].</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">30</div>
+                    Security Levels (SL): il contratto di sicurezza
+                </h2>
+                <div class="section-description">
+                    I Security Levels definiscono il grado di protezione richiesto per un sistema o una zona, da SL-0 (nessuna protezione) a SL-4 (resistenza ad attacchi sofisticati). Sono il risultato del TRA e della tolleranza al rischio, poiché traducono il livello di rischio accettabile in requisiti di sicurezza concreti [7].
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Concetto di SL
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Sono un punto di equilibrio tra rischio, risorse e protezione [7].</li>
+                            <li class="sub-point">Non mirano a eliminare ogni minaccia, ma a garantire che il sistema sia adeguatamente protetto rispetto al contesto e alle aspettative dell'organizzazione [7].</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Filosofia degli SL
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Rappresentano un patto sociale tra l'organizzazione, i produttori e gli stakeholder [8].</li>
+                            <li class="sub-point">Incarnano il principio di proporzionalità: la sicurezza deve essere commisurata al rischio, evitando sia la paranoia che la negligenza [8].</li>
+                            <li class="sub-point">Introducono una dimensione normativa, standardizzando il linguaggio della sicurezza per facilitare il dialogo tra attori diversi [8].</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">31</div>
+                    Relazioni concettuali e filosofiche
+                </h2>
+                <div class="section-description">
+                    Gli elementi di tolleranza al rischio, Threat-Risk Assessment (TRA), Security Levels (SL) e livello di confidenza sono strettamente interconnessi, formando una rete complessa di influenze reciproche [9].
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Tolleranza al rischio e TRA
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">La tolleranza al rischio guida il TRA, definendo quali rischi sono accettabili [9].</li>
+                            <li class="sub-point">Il TRA, a sua volta, informa la tolleranza al rischio, fornendo dati che possono modificarne la percezione [9].</li>
+                            <li class="sub-point">Filosoficamente, riflette una dialettica tra soggettività (volontà dell'organizzazione) e oggettività (dati del TRA) [9].</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            TRA e Security Levels
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Il TRA produce una valutazione dei rischi che si traduce nei Security Levels target [10].</li>
+                            <li class="sub-point">Gli SL sono la concretizzazione operativa del TRA [10].</li>
+                            <li class="sub-point">Filosoficamente, rappresenta il passaggio dalla teoria (l'analisi dei rischi) alla pratica (l'implementazione della sicurezza), richiamando il pragmatismo filosofico [10].</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Security Levels e Livello di Confidenza
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Gli SL influenzano direttamente il livello di confidenza, poiché un sistema certificato a un SL elevato tende a ispirare maggiore fiducia [10].</li>
+                            <li class="sub-point">La confidenza non dipende solo dagli SL, ma anche dalla trasparenza e dalla comunicazione [10].</li>
+                            <li class="sub-point">Filosoficamente, evidenzia la tensione tra realtà (sicurezza effettiva) e percezione (fiducia soggettiva), un tema centrale nella fenomenologia [10].</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Tolleranza al rischio e Livello di Confidenza
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Una bassa tolleranza al rischio richiede un alto livello di confidenza nei sistemi, spingendo a investire in misure robuste [11].</li>
+                            <li class="sub-point">Al contrario, un'alta tolleranza al rischio può ridurre il bisogno di confidenza [11].</li>
+                            <li class="sub-point">Filosoficamente, richiama il concetto di angoscia esistenziale: una bassa tolleranza al rischio riflette un'ansia verso l'incertezza, mentre una confidenza elevata è un atto di fiducia nel controllo umano sulla tecnologia [11].</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">32</div>
+                    Il ruolo della pubblicità del Security Level da parte dei produttori
+                </h2>
+                <div class="section-description">
+                    La pubblicizzazione del Security Level da parte di un produttore è cruciale per influenzare il livello di confidenza dell'asset owner e merita un'analisi approfondita [12].
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Funzioni Concettuali della Pubblicità del SL
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Fornire all'asset owner un'informazione standardizzata e verificabile sulla robustezza del prodotto [12].</li>
+                            <li class="sub-point">Ridurre l'asimmetria informativa, permettendo all'asset owner di valutare l'adeguatezza del prodotto anche senza accesso ai dettagli tecnici [13].</li>
+                            <li class="sub-point">Aumentare la confidenza, specialmente se il SL è certificato da enti indipendenti [13].</li>
+                            <li class="sub-point">Influenzare la tolleranza al rischio dell'organizzazione, consentendo una potenziale ottimizzazione delle risorse [13].</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Implicazioni Filosofiche ed Etiche
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">È un atto di comunicazione performativa, che non si limita a descrivere, ma crea un effetto (la fiducia) nell'asset owner [14].</li>
+                            <li class="sub-point">Comporta responsabilità etiche riguardo l'autenticità (non esagerare o dichiarare SL non verificabili) per non minare la fiducia nell'ecosistema della sicurezza industriale [14].</li>
+                            <li class="sub-point">La fiducia è un bene comune che sostiene l'intero sistema industriale; una comunicazione trasparente contribuisce a costruire una cultura della sicurezza condivisa [15].</li>
+                            <li class="sub-point">Influenza la percezione dell'asset owner più della sicurezza effettiva del prodotto, introducendo una dimensione fenomenologica [15].</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Importanza Strategica per il Produttore
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Differenziazione competitiva in un mercato affollato [16].</li>
+                            <li class="sub-point">Supporto al Threat-Risk Assessment (TRA) dell'asset owner, riducendo l'incertezza e accelerando il processo decisionale [16].</li>
+                            <li class="sub-point">Costruzione di fiducia e rafforzamento della reputazione del produttore [16].</li>
+                            <li class="sub-point">L'efficacia dipende dalla credibilità (certificazione indipendente) e non deve oscurare altri fattori che influenzano la confidenza (es. supporto post-vendita, integrazione, reputazione complessiva) [17].</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">33</div>
+                    Prospettiva filosofica: la sicurezza come narrazione condivisa
+                </h2>
+                <div class="section-description">
+                    Il rapporto tra tolleranza al rischio, livello di confidenza, Threat-Risk Assessment (TRA) e Security Levels può essere visto come una narrazione condivisa sulla sicurezza, che dà senso all'incertezza del mondo industriale [18].
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Elementi come capitoli della narrazione
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">La tolleranza al rischio è il punto di vista dell'organizzazione, la sua 'voce' che esprime quanto è disposta a rischiare [18].</li>
+                            <li class="sub-point">Il TRA è il capitolo analitico, che cerca di razionalizzare l'incertezza e fornire una base fattuale alla storia [18].</li>
+                            <li class="sub-point">I Security Levels sono i capitoli operativi, che traducono la narrazione in azioni concrete e misurabili [19].</li>
+                            <li class="sub-point">Il livello di confidenza è il tono emotivo della narrazione, che determina se la storia è percepita come rassicurante o inquietante [19].</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Il ruolo della pubblicità del Security Level
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">È un atto narrativo cruciale: non si limita a informare, ma plasma la percezione dell'asset owner, influenzando il modo in cui la storia della sicurezza viene raccontata e vissuta [19].</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Visione ermeneutica della sicurezza
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Non esiste una sicurezza oggettiva, ma solo un'interpretazione condivisa, costruita attraverso il dialogo tra produttori, asset owner e standard come la IEC 62443 [19].</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">34</div>
+                    Conclusione
+                </h2>
+                <div class="section-description">
+                    La tolleranza al rischio, il livello di confidenza, il Threat-Risk Assessment e i Security Levels sono elementi interconnessi che formano il tessuto concettuale della sicurezza industriale [20].
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Sintesi Filosofica
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Rappresentano una tensione tra razionalità e incertezza, tra realtà e percezione, tra controllo e libertà [20].</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Importanza della Pubblicità del Security Level
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">È un atto strategico ed etico, che può rafforzare il livello di confidenza dell'asset owner, facilitare il TRA e influenzare la tolleranza al rischio [20].</li>
+                            <li class="sub-point">La sua efficacia dipende dalla trasparenza, dalla credibilità e dalla capacità di costruire una narrazione condivisa della sicurezza [20].</li>
+                            <li class="sub-point">Comunicare il Security Level non è solo marketing, ma un contributo alla costruzione di un ecosistema industriale più sicuro e responsabile [20].</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">35</div>
+                    Foundational Requirements (FR): il cuore concettuale della sicurezza
+                </h2>
+                <div class="section-description">
+                    I Foundational Requirements (FR) rappresentano i pilastri fondamentali della sicurezza secondo lo standard IEC 62443. Sono sette requisiti base che definiscono gli obiettivi di sicurezza essenziali per un sistema ICS [1].
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Sette requisiti base dei FR
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Identificazione e autenticazione [1]</li>
+                            <li class="sub-point">Controllo degli accessi [1]</li>
+                            <li class="sub-point">Integrità dei dati [1]</li>
+                            <li class="sub-point">Riservatezza [1]</li>
+                            <li class="sub-point">Flusso di dati controllato [1]</li>
+                            <li class="sub-point">Risposta tempestiva agli eventi [1]</li>
+                            <li class="sub-point">Disponibilità delle risorse [1]</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Concetto e filosofia dei FR
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Sono l'equivalente di un insieme di principi universali o 'leggi fondamentali' della sicurezza [1].</li>
+                            <li class="sub-point">Non si limitano a prescrivere soluzioni tecniche, ma stabiliscono cosa deve essere protetto e perché [1].</li>
+                            <li class="sub-point">Incarcano una visione olistica, mirando a garantire l'equilibrio tra tutte le dimensioni della sicurezza (confidenzialità, integrità, disponibilità, ecc.) [1].</li>
+                            <li class="sub-point">Riflettono una filosofia di sistemicità, dove ogni requisito contribuisce a un tutto coerente [1].</li>
+                            <li class="sub-point">Sono un approccio di astrazione, non scendendo nel dettaglio tecnico, ma guidando la progettazione delle misure [1].</li>
+                            <li class="sub-point">Filosoficamente, rappresentano un 'contratto sociale' tra il sistema industriale e i suoi stakeholder, stabilendo aspettative minime di protezione [2].</li>
+                            <li class="sub-point">Sono il punto di partenza per qualsiasi strategia di sicurezza, simili ai principi etici in un sistema morale [2].</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">36</div>
+                    Security Levels (SL): il metro della protezione necessaria
+                </h2>
+                <div class="section-description">
+                    I Security Levels (SL) definiscono il livello di protezione richiesto per un sistema o una zona in base alla sua criticità e al profilo di rischio. Gli SL, da SL-0 a SL-4, rappresentano una scala graduata di resistenza alle minacce, da nessuna protezione a una protezione contro attacchi intenzionali altamente sofisticati [2].
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Concetto di SL
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Sono un ponte tra l'astrazione dei FR e la realtà operativa [3].</li>
+                            <li class="sub-point">Traducono i requisiti fondamentali in un obiettivo misurabile, specificando quanto un sistema deve essere sicuro rispetto a un determinato FR [3].</li>
+                            <li class="sub-point">Ad esempio, il FR 'Controllo degli accessi' può essere soddisfatto a SL-1 (misure base come password semplici) o a SL-4 (autenticazione multifattore avanzata e monitoraggio continuo) [3].</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Filosofia degli SL
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Introducono una visione relativistica della sicurezza: non esiste una sicurezza assoluta, ma un livello di protezione proporzionato al rischio e al contesto [3].</li>
+                            <li class="sub-point">Riflettono un pragmatismo filosofico: la sicurezza è un compromesso tra risorse disponibili, criticità del sistema e minacce previste [3].</li>
+                            <li class="sub-point">Incarcano il principio di proporzionalità, richiedendo di calibrare gli sforzi di sicurezza in base alla posta in gioco [3].</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">37</div>
+                    Controlli e contromisure: l'implementazione pratica
+                </h2>
+                <div class="section-description">
+                    I controlli (o contromisure) sono le misure tecniche, organizzative o procedurali adottate per soddisfare i FR a un determinato SL. Sono descritti in dettaglio nella serie IEC 62443-3-3 (per i sistemi) e 62443-4-2 (per i componenti) [4].
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Esempi di controlli
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Firewall [4]</li>
+                            <li class="sub-point">Sistemi di rilevamento delle intrusioni [4]</li>
+                            <li class="sub-point">Politiche di gestione delle password [4]</li>
+                            <li class="sub-point">Formazione del personale [4]</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Concetto e filosofia dei controlli
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Sono la traduzione operativa dei FR e degli SL [4].</li>
+                            <li class="sub-point">Se i FR definiscono 'cosa' proteggere e gli SL 'quanto' proteggerlo, i controlli rispondono al 'come' [4].</li>
+                            <li class="sub-point">Sono il livello più concreto e tangibile del framework [4].</li>
+                            <li class="sub-point">Filosoficamente, rappresentano il passaggio dal piano ideale a quello pratico, incarnando una visione utilitaristica per massimizzare la sicurezza con minimo spreco di risorse [5].</li>
+                            <li class="sub-point">La scelta dei controlli non è mai neutra, riflettendo priorità, vincoli di budget, cultura organizzativa e percezione del rischio [5].</li>
+                            <li class="sub-point">Introducono una dimensione etica, poiché le decisioni possono avere conseguenze dirette sulla sicurezza delle persone e dell'ambiente [5].</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">38</div>
+                    Maturity Levels: l'evoluzione della sicurezza
+                </h2>
+                <div class="section-description">
+                    I Maturity Levels (descritti in IEC 62443-2-4 per le organizzazioni e i processi) misurano il grado di maturità di un'organizzazione nell'implementare e mantenere le pratiche di sicurezza. Valutano non solo l'adozione dei controlli, ma anche la loro integrazione nei processi aziendali, la loro documentazione, il monitoraggio continuo e il miglioramento [6].
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Concetto di Maturity Levels
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Rappresentano una dimensione temporale e dinamica della sicurezza [6].</li>
+                            <li class="sub-point">Valutano la capacità di un'organizzazione di adattarsi, migliorare e rispondere a nuove minacce [6].</li>
+                            <li class="sub-point">Un Maturity Level alto implica che la sicurezza è diventata parte integrante della cultura e dei processi aziendali [6].</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Filosofia dei Maturity Levels
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Incarcano una visione evolutiva della sicurezza, ispirata a concetti come il miglioramento continuo (Kaizen) o il progresso dialettico [7].</li>
+                            <li class="sub-point">La sicurezza non è un punto di arrivo, ma un processo in divenire che richiede apprendimento, adattamento e resilienza [7].</li>
+                            <li class="sub-point">Riflettono una filosofia umanistica, ponendo l'accento sulle persone, la loro formazione e il loro ruolo nel garantire la sicurezza [7].</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">39</div>
+                    Relazioni concettuali tra i componenti
+                </h2>
+                <div class="section-description">
+                    Gli elementi del framework IEC 62443 – FR, SL, controlli e Maturity Levels – sono strettamente interconnessi e formano un ciclo virtuoso [8-10].
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Dai FR agli SL
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">I FR sono il 'cosa' (gli obiettivi universali), mentre gli SL sono il 'quanto' (il livello di protezione richiesto) [8].</li>
+                            <li class="sub-point">Insieme, definiscono il target di sicurezza, passando dall'universale al particolare [8].</li>
+                            <li class="sub-point">Esempio: 'Integrità dei dati' (FR) può essere soddisfatto a SL-2 per un sistema non critico o a SL-4 per un sistema vitale [8].</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Dagli SL ai controlli
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Gli SL guidano la selezione dei controlli, che sono il 'come' [9].</li>
+                            <li class="sub-point">Un SL più alto richiede controlli più robusti e complessi [9].</li>
+                            <li class="sub-point">Questa relazione è operativa, traducendo i requisiti astratti in specifiche tecniche o organizzative [9].</li>
+                            <li class="sub-point">Rappresenta un passaggio dall'astratto al concreto, dall'intenzione all'azione [9].</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Dai controlli ai Maturity Levels
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">I controlli, una volta implementati, devono essere integrati nei processi aziendali e migliorati nel tempo [9].</li>
+                            <li class="sub-point">I Maturity Levels valutano come i controlli vengono gestiti e mantenuti, introducendo una dimensione temporale [9].</li>
+                            <li class="sub-point">Riflette il passaggio dall'azione isolata al sistema integrato [9].</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Ciclo completo (FR → SL → Controlli → Maturity Levels)
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Formano un ciclo virtuoso in cui i FR definiscono gli obiettivi, gli SL li contestualizzano, i controlli li implementano e i Maturity Levels ne garantiscono la sostenibilità e il miglioramento [10].</li>
+                            <li class="sub-point">Questo ciclo riflette una visione sistemica e dinamica, dove ogni elemento è interdipendente [10].</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">40</div>
+                    Prospettiva filosofica: sicurezza come equilibrio e processo
+                </h2>
+                <div class="section-description">
+                    Filosoficamente, il rapporto tra FR, SL, controlli e Maturity Levels può essere visto come una ricerca di equilibrio tra principi universali (FR), necessità pratiche (SL e controlli) e miglioramento continuo (Maturity Levels) [10]. Questo equilibrio è intrinsecamente instabile a causa dell'evoluzione di minacce, tecnologie e organizzazioni [10]. La IEC 62443 propone un processo continuo che richiede consapevolezza, adattamento e responsabilità [10].
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Tensione tra determinismo e flessibilità
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Il framework riflette una tensione tra la necessità di standardizzare e misurare la sicurezza (determinismo) e la capacità di adattarsi a contesti diversi (flessibilità) [11].</li>
+                            <li class="sub-point">Questa tensione è tipica di ogni sistema complesso e richiama concetti filosofici come la dialettica (tesi-antitesi-sintesi) o il pragmatismo [11].</li>
+                            <li class="sub-point">La sicurezza non è assoluta, ma emerge dall'interazione tra teoria e pratica [11].</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script>
+        // Aggiungi interattività alle card
+        // Animazione di apparizione delle sezioni durante lo scroll
+        document.querySelectorAll('.point-card').forEach((card) => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            })
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            })
+        }
+        )
+        // Animazione di apparizione delle sezioni durante lo scroll
+        const observerOptions = {
+            threshold: 0.1, 
+            rootMargin: '0px 0px -50px 0px'
+         };
+        const observer = new IntersectionObserver(entries => 
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateX(0)';
+                }
+            }
+            )
+        , observerOptions);
+        // Effetto particelle cyber
+        document.querySelectorAll('.section').forEach(section => 
+            observer.observe(section)
+        )
+        function createCyberParticle() {
+            const particle = document.createElement('div');
+            particle.style.position = 'absolute';
+            particle.style.width = '2px';
+            particle.style.height = '2px';
+            particle.style.background = '#3498db';
+            particle.style.borderRadius = '50%';
+            particle.style.pointerEvents = 'none';
+            particle.style.opacity = '0.6';
+            const startX = Math.random() * window.innerWidth;
+            const startY = window.innerHeight + 10;
+            particle.style.left = startX + 'px';
+            particle.style.top = startY + 'px';
+            document.querySelector('.cyber-visual').appendChild(particle);
+            const animation = particle.animate([
+                {
+                    transform: 'translateY(0px)', 
+                    opacity: 0.6
+                 }, 
+                {
+                    transform: `translateY(-${window.innerHeight + 20}px)`, 
+                    opacity: 0
+                 }
+            ], {
+                duration: 3000 + Math.random() * 2000, 
+                easing: 'linear'
+             });
+            animation.onfinish = () => 
+                particle.remove()
+            ;
+            // Effetto particelle cyber
+            // Crea particelle periodicamente
+        }
+        // Crea particelle periodicamente
+        setInterval(createCyberParticle, 500);
+    </script>
+</body>
+
+</html>
