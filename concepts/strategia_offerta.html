@@ -1,0 +1,817 @@
+<!--
+    artifact generator: C:\My\wizzi\stfnbssl\wizzi.plugins\packages\wizzi.plugin.html\lib\artifacts\html\document\gen\main.js
+    package: @wizzi/plugin.html@0.8.10
+    primary source IttfDocument: C:\My\wizzi\stfnbssl\lavori\logbot-cybersecurity\packages\digital-core\.wizzi\site\concepts\strategia_offerta.html.ittf
+    utc time: Tue, 10 Jun 2025 09:06:35 GMT
+-->
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cybersecurity: Offerta Servizi Strategica</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            -webkit-border-radius: 20px;
+            -khtml-border-radius: 20px;
+            -moz-border-radius: 20px;
+            -o-border-radius: 20px;
+            border-radius: 20px;
+            -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            -o-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            -webkit-animation: fadeInUp 0.8s ease-out;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        @keyframes fadeInUp {
+            fadeInUp from {
+                opacity: 0;
+                -webkit-transform: translateY(30px);
+                -ms-transition: translateY(30px);
+                transform: translateY(30px);
+            }
+            fadeInUp to {
+                opacity: 1;
+                -webkit-transform: translateY(0);
+                -ms-transition: translateY(0);
+                transform: translateY(0);
+            }
+        }
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            -webkit-animation: float 20s linear infinite;
+            animation: float 20s linear infinite;
+        }
+        @keyframes float {
+            float 0% {
+                -webkit-transform: translate(-50%, -50%) rotate(0deg);
+                -ms-transition: translate(-50%, -50%) rotate(0deg);
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            float 100% {
+                -webkit-transform: translate(-50%, -50%) rotate(360deg);
+                -ms-transition: translate(-50%, -50%) rotate(360deg);
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        .category-badge {
+            display: inline-block;
+            background: rgba(52, 152, 219, 0.2);
+            color: #3498db;
+            padding: 8px 16px;
+            -webkit-border-radius: 20px;
+            -khtml-border-radius: 20px;
+            -moz-border-radius: 20px;
+            -o-border-radius: 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(52, 152, 219, 0.3);
+        }
+        .main-title {
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #fff, #ecf0f1);
+            background-clip: text;
+        }
+        .timestamp {
+            opacity: 0.8;
+            font-size: 0.95em;
+        }
+        .tags {
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 12px;
+            -webkit-border-radius: 15px;
+            -khtml-border-radius: 15px;
+            -moz-border-radius: 15px;
+            -o-border-radius: 15px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+        .tag:hover {
+            background: rgba(255, 255, 255, 0.3);
+            -webkit-transform: translateY(-2px);
+            -ms-transition: translateY(-2px);
+            transform: translateY(-2px);
+        }
+        .content {
+            padding: 40px;
+        }
+        .section {
+            margin-bottom: 50px;
+            opacity: 0;
+            -webkit-animation: slideInLeft 0.8s ease-out forwards;
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+        .section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        @keyframes slideInLeft {
+            slideInLeft from {
+                opacity: 0;
+                -webkit-transform: translateX(-30px);
+                -ms-transition: translateX(-30px);
+                transform: translateX(-30px);
+            }
+            slideInLeft to {
+                opacity: 1;
+                -webkit-transform: translateX(0);
+                -ms-transition: translateX(0);
+                transform: translateX(0);
+            }
+        }
+        .section-title {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            gap: 12px;
+        }
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            -webkit-border-radius: 50%;
+            -khtml-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -o-border-radius: 50%;
+            border-radius: 50%;
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            -webkit-flex-shrink: 0;
+            -ms-flex-negative: 0;
+            flex-shrink: 0;
+        }
+        .section-description {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(52, 152, 219, 0.05);
+            border-left: 4px solid #3498db;
+            -webkit-border-radius: 0 10px 10px 0;
+            -khtml-border-radius: 0 10px 10px 0;
+            -moz-border-radius: 0 10px 10px 0;
+            -o-border-radius: 0 10px 10px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        .points-container {
+            display: grid;
+            gap: 25px;
+        }
+        .point-card {
+            background: white;
+            -webkit-border-radius: 15px;
+            -khtml-border-radius: 15px;
+            -moz-border-radius: 15px;
+            -o-border-radius: 15px;
+            border-radius: 15px;
+            padding: 25px;
+            -webkit-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            -moz-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            -o-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(52, 152, 219, 0.1);
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .point-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            -webkit-transform: scaleX(0);
+            -ms-transition: scaleX(0);
+            transform: scaleX(0);
+            -webkit-transition: transform 0.3s ease;
+            -moz-transition: transform 0.3s ease;
+            -o-transition: transform 0.3s ease;
+            transition: transform 0.3s ease;
+        }
+        .point-card:hover {
+            -webkit-transform: translateY(-5px);
+            -ms-transition: translateY(-5px);
+            transform: translateY(-5px);
+            -webkit-box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            -moz-box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            -o-box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        .point-card:hover::before {
+            -webkit-transform: scaleX(1);
+            -ms-transition: scaleX(1);
+            transform: scaleX(1);
+        }
+        .point-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .point-icon {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            -webkit-border-radius: 50%;
+            -khtml-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -o-border-radius: 50%;
+            border-radius: 50%;
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        .sub-points {
+            list-style: none;
+            padding: 0;
+        }
+        .sub-point {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #666;
+            line-height: 1.6;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .sub-point:last-child {
+            border-bottom: none;
+        }
+        .sub-point::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .cyber-visual {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.03;
+        }
+        .cyber-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: -webkit-linear-gradient(rgba(52, 152, 219, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(52, 152, 219, 0.1) 1px, transparent 1px);
+            background-image: -moz-linear-gradient(rgba(52, 152, 219, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(52, 152, 219, 0.1) 1px, transparent 1px);
+            background-image: -o-linear-gradient(rgba(52, 152, 219, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(52, 152, 219, 0.1) 1px, transparent 1px);
+            background-image: -ms-linear-gradient(rgba(52, 152, 219, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(52, 152, 219, 0.1) 1px, transparent 1px);
+            background-image: linear-gradient(rgba(52, 152, 219, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(52, 152, 219, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            -webkit-animation: gridMove 30s linear infinite;
+            animation: gridMove 30s linear infinite;
+        }
+        @keyframes gridMove {
+            gridMove 0% {
+                -webkit-transform: translate(0, 0);
+                -ms-transition: translate(0, 0);
+                transform: translate(0, 0);
+            }
+            gridMove 100% {
+                -webkit-transform: translate(50px, 50px);
+                -ms-transition: translate(50px, 50px);
+                transform: translate(50px, 50px);
+            }
+        }
+        .floating-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .floating-icon {
+            position: absolute;
+            color: rgba(52, 152, 219, 0.1);
+            font-size: 24px;
+            -webkit-animation: float-icon 15s linear infinite;
+            animation: float-icon 15s linear infinite;
+        }
+        .floating-icon:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        .floating-icon:nth-child(2) {
+            top: 20%;
+            left: 80%;
+            animation-delay: 3s;
+        }
+        .floating-icon:nth-child(3) {
+            top: 60%;
+            left: 20%;
+            animation-delay: 6s;
+        }
+        .floating-icon:nth-child(4) {
+            top: 80%;
+            left: 70%;
+            animation-delay: 9s;
+        }
+        @keyframes float-icon {
+            float-icon 0% {
+                -webkit-transform: translateY(0px) rotate(0deg);
+                -ms-transition: translateY(0px) rotate(0deg);
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0;
+            }
+            float-icon 10% {
+                opacity: 1;
+            }
+            float-icon 90% {
+                opacity: 1;
+            }
+            float-icon 100% {
+                -webkit-transform: translateY(-100px) rotate(360deg);
+                -ms-transition: translateY(-100px) rotate(360deg);
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                -webkit-border-radius: 15px;
+                -khtml-border-radius: 15px;
+                -moz-border-radius: 15px;
+                -o-border-radius: 15px;
+                border-radius: 15px;
+            }
+            .header {
+                padding: 30px 20px;
+            }
+            .main-title {
+                font-size: 2em;
+            }
+            .content {
+                padding: 30px 20px;
+            }
+            .tags {
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cyber-visual">
+        <div class="cyber-grid"></div>
+        <div class="floating-icons">
+            <div class="floating-icon">🛡️</div>
+            <div class="floating-icon">🔒</div>
+            <div class="floating-icon">🔐</div>
+            <div class="floating-icon">⚡</div>
+        </div>
+    </div>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="category-badge">Cyber Security</div>
+                <h1 class="main-title">Schema concettuale per l’Elaborazione delle offerte</h1>
+                <div class="timestamp">📅 2025-06-10T08:23:00Z</div>
+                <div class="tags">
+                    <span class="tag">#cybersecurity</span>
+                    <span class="tag">#strategia</span>
+                    <span class="tag">#servizi</span>
+                    <span class="tag">#classificazione</span>
+                </div>
+            </div>
+        </header>
+        <div class="content">
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">1</div>
+                    Obiettivo
+                </h2>
+                <div class="section-description">
+                    Progettare uno schema concettuale per strutturare e classificare le offerte di prodotti tecnici e servizi in ambito Cyber Security.
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Lo schema mira a fornire un quadro per identificare e proporre soluzioni che rispondano alle esigenze specifiche dei clienti, considerando:
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Gli aspetti strategici delle aziende clienti.</li>
+                            <li class="sub-point">Il loro stato di maturità nel percorso di attuazione di un programma di sicurezza (Security Program).</li>
+                            <li class="sub-point">Aderenza ad un Holistic Security Concept: le offerte riguardano tecnologie, processi e persone, anche distintamente ma sempre in modo coordinato.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">2</div>
+                    Classificazione delle Offerte
+                </h2>
+                <div class="section-description">
+                    Le offerte sono classificate in base a tre dimensioni principali: tecnologia, processi e persone, considerando i ruoli coinvolti e lo stato di maturità del cliente nel percorso di attuazione del Security Program.
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Tecnologia
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Prodotti hardware e software per la protezione degli asset (es. firewall, sistemi SIEM, soluzioni di crittografia).</li>
+                            <li class="sub-point">Soluzioni per il monitoraggio e la gestione delle minacce (es. IDS/IPS, threat intelligence).</li>
+                            <li class="sub-point">Strumenti per la gestione degli accessi e delle identità (es. IAM, autenticazione multifattore).</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Processi
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Framework e metodologie per la gestione della sicurezza (es. ISO 27001, IEC 62443, NIST).</li>
+                            <li class="sub-point">Procedure per la risposta agli incidenti e la gestione delle crisi.</li>
+                            <li class="sub-point">Processi di conformità normativa (es. GDPR, Nis2, Registro Macchine, CRA).</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Persone
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Programmi di formazione e sensibilizzazione per dipendenti e stakeholder (malware, fishing, ransomware, social engineering).</li>
+                            <li class="sub-point">Servizi di consulenza per lo sviluppo di una cultura della sicurezza.</li>
+                            <li class="sub-point">Soluzioni per la gestione delle competenze interne (percorsi di upskilling).</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Ruoli Coinvolti
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Proprietari degli asset: Responsabili della protezione delle infrastrutture critiche.</li>
+                            <li class="sub-point">Produttori di componenti e sistemi: Fornitori di tecnologie integrate nelle soluzioni.</li>
+                            <li class="sub-point">Integratori di sistemi: Soggetti che combinano più soluzioni per creare sistemi complessi.</li>
+                            <li class="sub-point">Fornitori di servizi di manutenzione: Offrono supporto continuo per garantire l’operatività.</li>
+                            <li class="sub-point">Associazioni di categoria o enti pubblici: Promuovono formazione, standardizzazione o supporto normativo.</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Stato di Maturità del Cliente
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Contemplazione: Valutazione iniziale delle esigenze di sicurezza, senza un piano definito.</li>
+                            <li class="sub-point">Determinazione: Decisione di adottare un programma di sicurezza, con identificazione delle aree di priorità.</li>
+                            <li class="sub-point">Progettazione: Definizione di un piano strategico e operativo per la sicurezza per le aree prioritarie identificate.</li>
+                            <li class="sub-point">Implementazione: Messa in atto delle soluzioni e dei processi pianificati.</li>
+                            <li class="sub-point">Mantenimento e Miglioramento: Monitoraggio continuo, ottimizzazione e aggiornamento del programma.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">3</div>
+                    Inquadramento Strategico
+                </h2>
+                <div class="section-description">
+                    Le offerte sono inserite in un quadro strategico gerarchico che combina strategie (obiettivi a lungo termine) e tattiche (azioni specifiche), con possibilità di personalizzazione per i grandi clienti.
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Classificazione delle Azioni
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Ogni offerta è valutata in base al suo valore tattico (es. risoluzione di una vulnerabilità specifica) e valore strategico (es. miglioramento della resilienza complessiva).</li>
+                            <li class="sub-point">Questi valori sono rappresentati come un array di valori (es. ['riduzione rischio immediato', 'conformità normativa', 'miglioramento reputazione']).</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Personalizzazione per Grandi Clienti
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Adattamento delle offerte in base agli obiettivi strategici del cliente (es. espansione internazionale, digital transformation).</li>
+                            <li class="sub-point">Considerazione dei vincoli operativi (es. budget, risorse interne).</li>
+                            <li class="sub-point">Definizione del livello di rischio accettabile.</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Esempio di Struttura Gerarchica
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Strategia: Rafforzare la resilienza cyber dell’azienda.</li>
+                            <li class="sub-point">Tattica 1: Implementare un sistema SIEM per il monitoraggio in tempo reale.</li>
+                            <li class="sub-point">Tattica 2: Formare il personale per ridurre gli errori umani.</li>
+                            <li class="sub-point">Tattica 3: Adottare un framework di conformità (es. GDPR).</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">4</div>
+                    Forme di Erogazione delle Offerte
+                </h2>
+                <div class="section-description">
+                    Le soluzioni possono essere erogate in diverse modalità, in base alle esigenze del cliente e al suo stato di maturità nel Security Program.
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Prodotti Logbot già a listino
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Evidenziare le features della piattaforma e dell'Iot Logbot 62443-ready.</li>
+                            <li class="sub-point">Soluzioni tecniche (prodotti) di Cyber Security già ora in offerta?</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Interventi Spot
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Soluzioni puntuali per affrontare esigenze immediate (es. assessment di vulnerabilità, risposta a incidenti).</li>
+                            <li class="sub-point">Ideali per clienti in fase di contemplazione o determinazione.</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Abbonamenti a Servizi Informativi
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Fornitura di aggiornamenti regolari su minacce, vulnerabilità e best practice (es. feed di threat intelligence).</li>
+                            <li class="sub-point">Adatti a clienti in tutte le fasi, con particolare valore in mantenimento e miglioramento.</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Abbonamenti a Servizi Formativi
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Programmi continuativi di formazione per dipendenti e manager (es. corsi online, simulazioni di phishing).</li>
+                            <li class="sub-point">Utili per rafforzare la dimensione 'persone' in tutte le fasi.</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Consulenza Personalizzata
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Supporto mirato per l’attuazione del Security Program, calibrato sullo stato di maturità del cliente (es. progettazione di un piano di sicurezza, supporto all’implementazione).</li>
+                            <li class="sub-point">Particolarmente rilevante per le fasi di progettazione e implementazione.</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Servizi di Security-as-a-Service (SECaaS)
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Soluzioni gestite, come monitoraggio SOC (Security Operations Center) o gestione degli endpoint.</li>
+                            <li class="sub-point">Ideali per clienti che desiderano esternalizzare parte delle attività di sicurezza, specialmente in fase di mantenimento.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <div class="section-icon">5</div>
+                    Ipotesi di implementazione dello schema concettuale proposto
+                </h2>
+                <div class="section-description">
+                    In ottica Digtal Core in supporto a Generative AI lo schema sarà composto da una base dati strutturata con documenti JSON.
+                </div>
+                <div class="points-container">
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Documenti
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Elenco offerta prodotti tecnologici</li>
+                            <li class="sub-point">Elenco offerta servizi rivolti a processi e persone</li>
+                            <li class="sub-point">Parametri di classificazione offerte</li>
+                            <li class="sub-point">Quadro strategico-tattico</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Produzione
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Creazione JSON Schemas con aiuto AI/LLM</li>
+                            <li class="sub-point">Popolamento JSONs con aiuto AI/LLM</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h3 class="point-title">
+                            <div class="point-icon">T</div>
+                            Utilizzo
+                        </h3>
+                        <ul class="sub-points">
+                            <li class="sub-point">Produzione offerte per cliente con supporto Generative AI</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script>
+        // Aggiungi interattività alle card
+        // Animazione di apparizione delle sezioni durante lo scroll
+        document.querySelectorAll('.point-card').forEach((card) => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            })
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            })
+        }
+        )
+        // Animazione di apparizione delle sezioni durante lo scroll
+        const observerOptions = {
+            threshold: 0.1, 
+            rootMargin: '0px 0px -50px 0px'
+         };
+        const observer = new IntersectionObserver(entries => 
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateX(0)';
+                }
+            }
+            )
+        , observerOptions);
+        // Effetto particelle cyber
+        document.querySelectorAll('.section').forEach(section => 
+            observer.observe(section)
+        )
+        function createCyberParticle() {
+            const particle = document.createElement('div');
+            particle.style.position = 'absolute';
+            particle.style.width = '2px';
+            particle.style.height = '2px';
+            particle.style.background = '#3498db';
+            particle.style.borderRadius = '50%';
+            particle.style.pointerEvents = 'none';
+            particle.style.opacity = '0.6';
+            const startX = Math.random() * window.innerWidth;
+            const startY = window.innerHeight + 10;
+            particle.style.left = startX + 'px';
+            particle.style.top = startY + 'px';
+            document.querySelector('.cyber-visual').appendChild(particle);
+            const animation = particle.animate([
+                {
+                    transform: 'translateY(0px)', 
+                    opacity: 0.6
+                 }, 
+                {
+                    transform: `translateY(-${window.innerHeight + 20}px)`, 
+                    opacity: 0
+                 }
+            ], {
+                duration: 3000 + Math.random() * 2000, 
+                easing: 'linear'
+             });
+            animation.onfinish = () => 
+                particle.remove()
+            ;
+            // Effetto particelle cyber
+            // Crea particelle periodicamente
+        }
+        // Crea particelle periodicamente
+        setInterval(createCyberParticle, 500);
+    </script>
+</body>
+
+</html>
