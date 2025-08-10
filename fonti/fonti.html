@@ -1,0 +1,1458 @@
+<!--
+    artifact generator: C:\My\wizzi\stfnbssl\wizzi.plugins\packages\wizzi.plugin.html\lib\artifacts\html\document\gen\main.js
+    package: @wizzi/plugin.html@0.8.10
+    primary source IttfDocument: C:\My\wizzi\stfnbssl\lavori\logbot-cybersecurity\packages\digital-core\.wizzi\site\fonti\fonti.html.ittf
+    utc time: Tue, 15 Jul 2025 05:56:53 GMT
+-->
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cybersecurity Sources Filter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            -webkit-border-radius: 20px;
+            -khtml-border-radius: 20px;
+            -moz-border-radius: 20px;
+            -o-border-radius: 20px;
+            border-radius: 20px;
+            -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            -o-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .filters {
+            padding: 30px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .filter-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .filter-group {
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+        .filter-group label {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            -webkit-letter-spacing: 0.5px;
+            -moz-letter-spacing: 0.5px;
+            -ms-letter-spacing: 0.5px;
+            letter-spacing: 0.5px;
+        }
+        .filter-group input, .filter-group select {
+            padding: 12px 16px;
+            border: 2px solid #e9ecef;
+            -webkit-border-radius: 12px;
+            -khtml-border-radius: 12px;
+            -moz-border-radius: 12px;
+            -o-border-radius: 12px;
+            border-radius: 12px;
+            font-size: 1rem;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        .filter-group input:focus, .filter-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            -webkit-box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            -moz-box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            -o-box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            -webkit-transform: translateY(-2px);
+            -ms-transition: translateY(-2px);
+            transform: translateY(-2px);
+        }
+        .stats {
+            text-align: center;
+            color: #6c757d;
+            font-weight: 500;
+            margin-top: 15px;
+        }
+        .content {
+            padding: 30px;
+        }
+        .source-card {
+            background: white;
+            -webkit-border-radius: 16px;
+            -khtml-border-radius: 16px;
+            -moz-border-radius: 16px;
+            -o-border-radius: 16px;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 25px;
+            -webkit-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            -moz-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            -o-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid #667eea;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .source-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+        .source-card:hover {
+            -webkit-transform: translateY(-5px);
+            -ms-transition: translateY(-5px);
+            transform: translateY(-5px);
+            -webkit-box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+            -moz-box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+            -o-box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+        .source-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        .source-meta {
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        .meta-item {
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            gap: 5px;
+        }
+        .meta-item strong {
+            color: #495057;
+        }
+        .source-url {
+            background: #e3f2fd;
+            padding: 8px 12px;
+            -webkit-border-radius: 8px;
+            -khtml-border-radius: 8px;
+            -moz-border-radius: 8px;
+            -o-border-radius: 8px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            word-break: break-all;
+            margin-bottom: 15px;
+        }
+        .source-url a {
+            color: #1976d2;
+            -webkit-text-decoration: none;
+            text-decoration: none;
+        }
+        .source-url a:hover {
+            -webkit-text-decoration: underline;
+            text-decoration: underline;
+        }
+        .tags-container {
+            margin-bottom: 15px;
+        }
+        .tags-container h4 {
+            color: #495057;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            -webkit-letter-spacing: 0.5px;
+            -moz-letter-spacing: 0.5px;
+            -ms-letter-spacing: 0.5px;
+            letter-spacing: 0.5px;
+        }
+        .tags {
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .tag {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 6px 12px;
+            -webkit-border-radius: 20px;
+            -khtml-border-radius: 20px;
+            -moz-border-radius: 20px;
+            -o-border-radius: 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            -webkit-letter-spacing: 0.3px;
+            -moz-letter-spacing: 0.3px;
+            -ms-letter-spacing: 0.3px;
+            letter-spacing: 0.3px;
+        }
+        .excerpts {
+            margin-top: 15px;
+        }
+        .excerpts h4 {
+            color: #495057;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            -webkit-letter-spacing: 0.5px;
+            -moz-letter-spacing: 0.5px;
+            -ms-letter-spacing: 0.5px;
+            letter-spacing: 0.5px;
+        }
+        .excerpt {
+            background: #f8f9fa;
+            padding: 12px 16px;
+            -webkit-border-radius: 8px;
+            -khtml-border-radius: 8px;
+            -moz-border-radius: 8px;
+            -o-border-radius: 8px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            border-left: 3px solid #667eea;
+            font-style: italic;
+            color: #495057;
+        }
+        .note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            -webkit-border-radius: 8px;
+            -khtml-border-radius: 8px;
+            -moz-border-radius: 8px;
+            -o-border-radius: 8px;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-top: 15px;
+            color: #856404;
+            font-size: 0.9rem;
+        }
+        .note strong {
+            color: #6c5700;
+        }
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: #6c757d;
+        }
+        .no-results h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #495057;
+        }
+        .clear-filters {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            -webkit-border-radius: 25px;
+            -khtml-border-radius: 25px;
+            -moz-border-radius: 25px;
+            -o-border-radius: 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            -webkit-letter-spacing: 0.5px;
+            -moz-letter-spacing: 0.5px;
+            -ms-letter-spacing: 0.5px;
+            letter-spacing: 0.5px;
+        }
+        .clear-filters:hover {
+            -webkit-transform: translateY(-2px);
+            -ms-transition: translateY(-2px);
+            transform: translateY(-2px);
+            -webkit-box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+            -moz-box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+            -o-box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .filter-row {
+                grid-template-columns: 1fr;
+            }
+            .source-meta {
+                -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔒 Cybersecurity Sources</h1>
+            <p>Filtra e esplora le risorse di cybersecurity industriale</p>
+        </div>
+        <div class="filters">
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label for="searchInput">🔍 Ricerca generale</label>
+                    <input type="text" id="searchInput" placeholder="Cerca nei titoli, fonti, note..." />
+                </div>
+                <div class="filter-group">
+                    <label for="topicFilter">📋 Argomento principale</label>
+                    <select id="topicFilter">
+                        <option value>Tutti gli argomenti</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="tagFilter">🏷️ Tag</label>
+                    <select id="tagFilter">
+                        <option value>Tutti i tag</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="sourceFilter">🏢 Fonte</label>
+                    <select id="sourceFilter">
+                        <option value>Tutte le fonti</option>
+                    </select>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <button class="clear-filters" onclick="clearAllFilters()">Cancella filtri</button>
+                <div class="stats" id="stats">Mostrando 0 di 0 risultati</div>
+            </div>
+        </div>
+        <div id="content" class="content"></div>
+    </div>
+    <script>
+        const jsonData = {
+            "sources": [
+                {
+                    "title": "How reinvention-ready companies are driving growth and relevance with gen AI", 
+                    "source": "How reinvention-ready companies are driving growth and relevance with gen AI", 
+                    "url": "https://www.accenture.com/content/dam/accenture/final/accenture-com/document-3/Accenture-Reinventing-Enterprise-Operations-FA-9-25-24.pdf#zoom=40", 
+                    "mainTopic": "Strategy", 
+                    "topics": [
+                        "Strategy"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        "01 Implement a domain-centric approach to data modernization. Reinvention-ready companies have centralized data governance and a domain-centric view of data modernization. This creates a strong data foundation that is ready for AI-led reinvention. One way to evaluate a data foundation is to evaluate how the three enablers—Talent, Assets & Platforms, and Methods & Processes—interact with data on an everyday basis. Do people have a clear understanding of how to create, handle and consume data? Are processes and tools connected across functions so different teams—sales, supply chain, service, HR, finance, R&D—all have access to the same data and analytics using their favorite tools? Is data structured in a standardized way, with security and accessibility baked in, using common data formats that allow it to be accessed by AI tools across the business?", 
+                        "02 Embrace a talent-first reinvention strategy. Leading organizations put people at the center of reinvention. In the age of AI, that means reshaping the workforce so that new roles align to business needs as the technology evolves. It means offering comprehensive training to workers so they can thrive in their roles and take full advantage of the power of gen AI. It means reinventing work and rethinking processes and entire workflows to gain a clear view of where gen AI can have the most impact in serving customers, supporting people and achieving business outcomes. This deep dependency on people is often overlooked while planning for gen AI-powered reinvention. Our research shows that 82% of Foundational organizations do not have a talent reinvention strategy in place. They’re not planning ahead to meet workforce needs, acquire new talent or train and upskill workers to prepare them for gen AI-led workflows.", 
+                        "03 Gen AI is more than a technology. It’s the driver of a cultural shift that affects the entire enterprise. So it’s vital that tech and business teams co-own outcomes and work together when making decisions around gen AI. That means reimagining how teams collaborate and design solutions. This is one of the starkest differences between Reinvention-ready and Foundational operations. In our research, 87% of Reinvention-ready companies stand out for “extensive collaboration” between their tech and business teams. These organizations have created a culture of cross-function collaboration where formerly siloed teams work together to identify and prioritize gen AI use cases that align to the organization’s strategic goals. Collaboration between teams then drives innovation as both teams jointly own how assets, platforms and products are developed to leverage the full capabilities of gen AI across the enterprise.", 
+                        "04 Adopt leading processes to drive business outcomes. According to our research, 87% of companies that are Reinvention-ready say they have applied leading cloud-based practices to business processes and process mining and have enabled internal and external benchmarking to drive performance. By comparison, only a small minority of companies in the Foundational and Automated tiers of Intelligent Operations— 5% and 20% respectively—have done the same. Cloud-based process mining calibrates internal and external benchmarks so it’s easier to visualize process gaps. This can speed gen AI adoption by providing clear insights into operational inefficiencies while flagging opportunities for improvement. Organizations get the data they need to analyze their processes and identify areas where AI can add the most value. With accurate benchmarks, organizations can set realistic targets and simulate the impact of AI interventions using digital twins. This datadriven approach ensures that AI initiatives are aligned with strategic goals to improve decision-making and drive exceptional business outcomes at scale."
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "Reinvention in the age of generative AI", 
+                    "source": "Reinvention in the age of generative AI", 
+                    "url": "https://www.accenture.com/content/dam/accenture/final/accenture-com/document-2/Accenture-Reinvention-in-the-age-of-generative-AI-Report.pdf#zoom=40", 
+                    "mainTopic": "Strategy", 
+                    "topics": [
+                        "Strategy"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        "Imperative 1: Lead with value. Executives agree that reinvention drives significant value, and generative AI will help them realize this value much faster. Rather than investing in siloed use cases, organizations that fundamentally reinvent their value chains based on an objective assessment of the business case, enterprise readiness and the corresponding return on investment will realize superior outcomes. Many organizations have spent the past year experimenting with generative AI, resulting in a string of standalone use cases that are not yet materially impacting the bottom line. This phase has shown what can be achieved with this technology. Looking ahead, companies will need to embark on a profound reinvention of their value chain and develop enduring, end-to-end business capabilities, aided by generative AI, to reach a new performance frontier.", 
+                        "Imperative 2: Understand and develop an AI-enabled, secure digital core. Companies need to elevate IT for the age of generative AI. This second imperative centers on connecting what was a disparate collection of data sets and technologies via an AI-enabled, secure digital core that consists of seven integrated components. Generative AI requires a fundamentally different enterprise architecture in which data is more fluid, and unstructured and synthetic data become much more important. It places higher demands on infrastructure, and IT operating models will need to change.", 
+                        "Imperative 3: Reinvent talent and ways of working Success with this latest tech revolution requires leaders to set and guide a vision for reinventing work, reshaping the workforce and preparing workers for a generative AI world. This is the third imperative. One of the most likely reasons companies will fail to succeed with generative AI is their inability to reach clarity fast enough on how work needs to be reinvented and reshape the workforce accordingly. This will require a new kind of HR that supports a skills-based HR and continuous learning across all levels of the workforce, including the C-suite. Another reason is a common lack of core competencies in change, and in focusing on how to unlock the potential of people. Success requires putting people at the heart of change. And it will mean leaders with different skills.", 
+                        "Imperative 4: Close the gap on responsible AI. Leaders must commit to maintaining high standards of trust, transparency and sustainability in every generative AI-driven initiative. Designing, deploying and using AI to drive value while mitigating risks is the fourth key imperative for leaders today.", 
+                        "Imperative 5: Drive continuous reinvention. Change is constant, so reinvention never ends. Leaders cannot approach reinvention as a contained effort undertaken every few years. They must build the capability to continuously reinvent, which is the fifth imperative. When the ability to change is part of the organizational DNA, it’s possible to operate and reinvent the organization without unduly stressing it"
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "Reinventing with a Digital Core", 
+                    "source": "Reinventing with a Digital Core", 
+                    "url": "https://www.accenture.com/content/dam/accenture/final/accenture-com/document-3/DigitalCore-Chapter2-Exec-Summary-v5.pdf#zoom=40", 
+                    "mainTopic": "Strategy", 
+                    "topics": [
+                        "Strategy"
+                    ], 
+                    "tags": [
+                        "Masterclass"
+                    ], 
+                    "excerpts": [
+                        "From our global survey of 1,500 companies and extensive client experience, we found three tenets that organizations can follow to get the most value, or the 60:40 effect- 60% higher revenue growth rate with 40% higher margins than peers. <br>Build an industry-leading digital core to reach the top quartile in capabilities specific to your industry and tuned to your organization <br>Boost strategic investments in innovation by 6% or more each year <br>Balance technical debt liabilities with investments for the future, targeting about 15% of IT budget for tech debt management", 
+                        "A reinvention-ready digital core is becoming a key differentiator for companies. Based on our analysis and extensive client experience, we found three engineering principles that simplify and supercharge how organizations can evolve to/build this digital core in this age of Al and generative Al to achieve a level of flexibility and new capabilities simply not possible before with traditional approaches- autonomous-driving, Al agents that negotiate terms with suppliers, personalized medicine or predictive / preventive customer care. Leading companies adopt these ACT principles-Architect for Intent, Connect the Dots and Thrive with Ecosystems-two times more than others. Following these principles can help organizations build or evolve to an industry-leading digital core easily, boost innovation budgets with efficiency gains and balance technical debt by anchoring to large ecosystems even as they explore leading-edge innovation at speed.", 
+                        "Architect for Intent: Evolve business and technology architectures to a modern cognitive architecture which mimics human-like thinking and learning-always on, always listening and always learning. Dynamically adapt to changing user engagement, context and data, using Al as the central orchestrator of processes. This allows systems to be flexible to changing business needs, moving away from instruction-driven to intent-driven systems.", 
+                        "Connect the Dots: Seamlessly connect systems of record (transaction platforms) and systems of insights (analytical platforms) to enable real-time analytics for hyper-personalized actions to drive business outcomes including revenue and customer engagement. Maintain a continuous flow of data between these platforms to drive ongoing optimization, self-reflection and better decision-making.", 
+                        "Thrive with the Ecosystem: Create differentiation in products and processes by deploying leading-edge innovations faster from both startups and bigger players via larger ecosystems. Benefit from the security, reliability and integration provided by these large anchor partners."
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "Trasformazione digitale e Cybersecurity: le nuove sfide per le PMI nell'era della Direttiva NIS2", 
+                    "source": "Trasformazione digitale e Cybersecurity: le nuove sfide per le PMI nell'era della Direttiva NIS2", 
+                    "url": "https://www.deloitte.com/content/dam/assets-zone2/it/it/docs/services/odp-trasformazionedigitale-cybersecurity-2025.pdf", 
+                    "mainTopic": "Strategy", 
+                    "topics": [
+                        "Strategy"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "Trasformazione digitale e Cybersecurity: le nuove sfide per le PMI nell'era della Direttiva NIS2", 
+                    "source": "Trasformazione digitale e Cybersecurity: le nuove sfide per le PMI nell'era della Direttiva NIS2", 
+                    "url": "https://www.deloitte.com/content/dam/assets-zone2/it/it/docs/services/odp-trasformazionedigitale-cybersecurity-2025.pdf", 
+                    "mainTopic": "Strategy", 
+                    "topics": [
+                        "Strategy"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "ISA Global Cybersecurity Alliance - Resource Center", 
+                    "source": "ISA Global Cybersecurity Alliance - Resource Center", 
+                    "url": "https://isagca.org/resources", 
+                    "mainTopic": "Norms, standards and frameworks", 
+                    "topics": [
+                        "Norms, standards and frameworks"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        ""
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "An Overview of ISA/IEC 62443 Standards", 
+                    "source": "An Overview of ISA/IEC 62443 Standards", 
+                    "url": "https://21577316.fs1.hubspotusercontent-na1.net/hubfs/21577316/2023%20ISA%20Website%20Redesigns/ISAGCA/PDFs/ISAGCA%20Quick%20Start%20Guide.pdf", 
+                    "mainTopic": "Norms, standards and frameworks", 
+                    "topics": [
+                        "Norms, standards and frameworks"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        ""
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "ISA Global Cybersecurity Alliance - Resource Center", 
+                    "source": "ISA Global Cybersecurity Alliance - Resource Center", 
+                    "url": "https://isagca.org/resources", 
+                    "mainTopic": "Norms, standards and frameworks", 
+                    "topics": [
+                        "Norms, standards and frameworks"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        ""
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "Roles and Responsibilities in the Security Lifecycle", 
+                    "source": "Roles and Responsibilities in the Security Lifecycle", 
+                    "url": "https://21577316.fs1.hubspotusercontent-na1.net/hubfs/21577316/2023%20ISA%20Website%20Redesigns/ISAGCA/PDFs/ISAGCA-IACS%20Roles%20and%20Responsibilities.pdf", 
+                    "mainTopic": "Norms, standards and frameworks", 
+                    "topics": [
+                        "Norms, standards and frameworks"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        "To understand how to use the ISA/IEC 62443 Series, it is first necessary to understand the relationship between Roles, Control System, Automation Solution, and IACS. Figure 1 visualizes this relationship. The left-hand side of Figure 1 shows the roles that are identified in the ISA/IEC 62443 Series", 
+                        "• Asset Owner is accountable and responsible for the IACS. The Asset Owner is also the operator of the IACS and the Equipment Under Control.", 
+                        "• Maintenance Service Provider provides support activities for an Automation Solution.", 
+                        "• Integration Service Provider provides integration activities for an Automation Solution including design, installation, configuration, testing, commissioning, and handover to the Asset Owner. The Integration Service Provider may also facilitate and assist in the activity to partition the System Under Consideration into Zones and Conduits and perform the Risk Assessment.", 
+                        "• Product Supplier manufactures and supports a hardware and/or software product. Products may include Control Systems, Embedded Devices, Host Devices, Network Devices, and/or Software Applications.", 
+                        "It is important to understand that a role is not necessarily an organization. An organization can have multiple roles, and the responsibilities for a particular role can be split among multiple organizations."
+                    ], 
+                    "note": [
+                        "Immagine di sintesi un po' complessa ma molto efficace"
+                    ]
+                 }, 
+                {
+                    "title": "Industrial Automation and Control System Taxonomy", 
+                    "source": "Industrial Automation and Control System Taxonomy", 
+                    "url": "https://21577316.fs1.hubspotusercontent-na1.net/hubfs/21577316/2023%20ISA%20Website%20Redesigns/ISAGCA/PDFs/ISAGCA-IACS%20Taxonomy%20Definitions%20of%20Terms.pdf", 
+                    "mainTopic": "Norms, standards and frameworks", 
+                    "topics": [
+                        "Norms, standards and frameworks"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        "ISA914 62443-2-4 also defines the proper noun “Solution” to mean the specific instance of the control system product and possibly additional components that are designed into the IACS. The Automation Solution, therefore, differs from the control system since it represents a specific implementation (design and configuration) of the control system hardware and software components for a specific asset owner."
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "Security of Industrial Automation and Control Systems An Overview of ISA/IEC 62443 Standards", 
+                    "source": "Security of Industrial Automation and Control Systems An Overview of ISA/IEC 62443 Standards", 
+                    "url": "https://21577316.fs1.hubspotusercontent-na1.net/hubfs/21577316/2023%20ISA%20Website%20Redesigns/ISAGCA/PDFs/ISAGCA%20Quick%20Start%20Guide%20FINAL.pdf", 
+                    "mainTopic": "Norms, standards and frameworks", 
+                    "topics": [
+                        "Norms, standards and frameworks"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        ""
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "Leveraging ISA 62443-3-2 For IACS Risk Assessment and Risk Related Strategies", 
+                    "source": "Leveraging ISA 62443-3-2 For IACS Risk Assessment and Risk Related Strategies", 
+                    "url": "https://21577316.fs1.hubspotusercontent-na1.net/hubfs/21577316/2023%20ISA%20Website%20Redesigns/ISAGCA/PDFs/ISAGCA_Leveraging%20ISA%2062443-3-2_White%20Paper.pdf            ", 
+                    "mainTopic": "Norms, standards and frameworks", 
+                    "topics": [
+                        "Norms, standards and frameworks"
+                    ], 
+                    "tags": [
+                        "Risk Assessment"
+                    ], 
+                    "excerpts": [
+                        ""
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "IEC 62443-2-2: The End of Security Levels? Are Security Protection Ratings (SPR) the next big thing?", 
+                    "source": "IEC 62443-2-2: The End of Security Levels? Are Security Protection Ratings (SPR) the next big thing?", 
+                    "url": "https://www.linkedin.com/pulse/iec-62443-2-2-end-security-levels-protection-ratings-van-hauwaert--eneke/", 
+                    "mainTopic": "Norms, standards and frameworks", 
+                    "topics": [
+                        "Norms, standards and frameworks"
+                    ], 
+                    "tags": [
+                        "Security Level", 
+                        "Security protection scheme", 
+                        "Security protection rating"
+                    ], 
+                    "excerpts": [
+                        "Since #Cyber became a thing in Industrial Environments, the concept of Security Levels (SLs) as defined in IEC 62443-3-3 has been the cornerstone of cybersecurity design for Industrial Automation and Control Systems (IACS). But with the publication of IEC PAS 62443-2-2:2025, we are witnessing a transformative evolution: a shift away from just Security Levels (SLs) as static technical capabilities, toward a dynamic and operationally model called the Security Protection Rating (SPR) that lives throughout the Lifecycle of the IACS.", 
+                        "Security Levels (SL0–SL4) have historically focused on technical capability — “can the system defend against a defined threat actor?”. But in the real world, operational sustainability, organizational maturity, changes and context-specific risks all influence whether those controls are actually effective over time.", 
+                        "IEC 62443-2-2 introduces Security Protection Ratings (SPR) as a multi-dimensional enhancement", 
+                        "SPR-T (Target): The desired security outcome based on business risk and desired Maturity", 
+                        "SPR-I (Implemented): The design intent of the deployed measures and maturity", 
+                        "SPR-O (Operated): The actual security level demonstrated in operation, factoring in execution quality, process maturity and the ability to manage changes", 
+                        "Each SPR not only incorporates technical capabilities (from IEC 62443-3-3) but also evaluates the repeatability and reliability of associated organizational processes using Maturity Levels (ML) from IEC 62443-2-1."
+                    ], 
+                    "note": [
+                        "A questa novità va fatto un cenno"
+                    ]
+                 }, 
+                {
+                    "title": "IEC PAS 62443-2-2 - Security for industrial automation and control systems – Part 2-2: IACS security protection scheme", 
+                    "source": "IEC PAS 62443-2-2 - Security for industrial automation and control systems – Part 2-2: IACS security protection scheme", 
+                    "url": "https://cdn.standards.iteh.ai/samples/102558/06687e89d3c744cb928b7692b69f6957/IEC-PAS-62443-2-2-2025.pdf", 
+                    "mainTopic": "Norms, standards and frameworks", 
+                    "topics": [
+                        "Norms, standards and frameworks"
+                    ], 
+                    "tags": [
+                        "62443", 
+                        "Security program", 
+                        "Security Level", 
+                        "Security protection scheme", 
+                        "Security protection rating"
+                    ], 
+                    "excerpts": [
+                        ""
+                    ], 
+                    "note": [
+                        "Parlando di Security Levels una slide può accennare alle novità", 
+                        "Il 62443-2-2 manca in libreria, deve essere reperito"
+                    ]
+                 }, 
+                {
+                    "title": "Applying ISO/IEC 27001/2 and the ISA/IEC 62443 Series for Operational Technology Environments", 
+                    "source": "Applying ISO/IEC 27001/2 and the ISA/IEC 62443 Series for Operational Technology Environments", 
+                    "url": "https://21577316.fs1.hubspotusercontent-na1.net/hubfs/21577316/2023%20ISA%20Website%20Redesigns/ISAGCA/PDFs/ISAGCA_Applying%20ISO-IEC%2027001-2%20and%20the%2062443%20Series_White%20Paper.pdf", 
+                    "mainTopic": "Norms, standards and frameworks", 
+                    "topics": [
+                        "Norms, standards and frameworks"
+                    ], 
+                    "tags": [
+                        "27000", 
+                        "62443", 
+                        "ISMS", 
+                        "CSMS"
+                    ], 
+                    "excerpts": [
+                        "This document offers guidance for organizations familiar with ISO/IEC 27001 and interested in protecting the OT infrastructure of their operating facilities based on the ISA/IEC 62443 series. It describes the relationship between the ISA/IEC 62443 series and ISO/IEC 27001/2 and how both standards may be effectively used within one organization to protect both IT and OT.", 
+                        "62443 does not require the use of an underlying Information Security Management System (ISMS), However it requires that, if the organization has an established ISMS, the security program in the OT environment should be coordinated with it. In this document we are considering the use case of an existing ISMS based on ISO/IEC 27001/2.", 
+                        "Other information security standards similar in scope to 27001 might be used effectively together with 62443 under an approach similar to that described here. Evaluation of such approaches is outside the scope of this paper. However, users of such standards are encouraged to explore that possibility"
+                    ], 
+                    "note": [
+                        "Da inserire parlando di standards e framework 27000, 62443 e NIST CSF 2.0"
+                    ]
+                 }, 
+                {
+                    "title": "Security Lifecycles in the ISA/IEC 62443 Series - Security of Industrial Automation and Control Systems", 
+                    "source": "Security Lifecycles in the ISA/IEC 62443 Series - Security of Industrial Automation and Control Systems", 
+                    "url": "https://21577316.fs1.hubspotusercontent-na1.net/hubfs/21577316/2022%20ISA%20Website%20Redesigns/ISASecure/PDFs/Miscellaneous%20PDFs/Documents-Articles-and-Technical-Papers/ISAGCA-Security-Lifecycles-whitepaper.pdf", 
+                    "mainTopic": "Norms, standards and frameworks", 
+                    "topics": [
+                        "Norms, standards and frameworks"
+                    ], 
+                    "tags": [
+                        "27000", 
+                        "62443", 
+                        "Automation Solution Security Lifecycle", 
+                        "Product Security Lifecycle", 
+                        "Lifecycle"
+                    ], 
+                    "excerpts": [
+                        "This document provides an overview of the security lifecycles that are described in the ISA/IEC 62443 Series of standards and technical reports, which specifies the requirements for the Security of Industrial Automation and Control System (IACS). There are two security lifecycles that are included in the ISA/IEC 62443 Series: the Product Security Lifecycle, and the Automation Solution Security Lifecycle.", 
+                        "The Product Security Lifecycle specifies the security requirements for the technical and organizational security measures used to design, develop, and support IACS System and Component products. It includes secure by design aspects such as threat modeling and defense-in-depth strategies, secure implementation such as secure coding standards, security verification & validation testing, and security update management. Technical security measures based on Security Levels allow the Product Supplier to deliver IACS Systems and IACS Components that are capable of meeting specified security requirements, provided the Asset Owner maintains associated organizational security measures.", 
+                        "The Automation Solution Security Lifecycle is shown in Figure 1 and specifies the technical and organizational security measures used throughout the lifecycle of the IACS Automation Solution, which is the realization of IACS Systems and IACS Components at a particular facility.", 
+                        "Asset Owner, Product Supplier, and Service Provider are roles that are defined later in this document. Roles are not the same as organizations. An organization can have multiple roles, and the responsibilities of a role can be split between multiple organizations. While this document presents typical roles and responsibilities throughout the security lifecycles, it is important to note that the Asset Owner must determine and document the actual roles and responsibilities used for their organization and IACS Product Suppliers and Service Providers"
+                    ], 
+                    "note": [
+                        
+                    ]
+                 }, 
+                {
+                    "title": "ESTABLISHING ZONES AND CONDUITS", 
+                    "source": "ESTABLISHING ZONES AND CONDUITS", 
+                    "url": "https://drive.google.com/drive/folders/1WxQh1hGqxwmWXjDQ3uke221eA_jfquRV", 
+                    "mainTopic": "Norms, standards and frameworks", 
+                    "topics": [
+                        "Norms, standards and frameworks"
+                    ], 
+                    "tags": [
+                        "62443", 
+                        "Roles and conduits"
+                    ], 
+                    "excerpts": [
+                        
+                    ], 
+                    "note": [
+                        
+                    ]
+                 }, 
+                {
+                    "title": "", 
+                    "source": "", 
+                    "url": "https://www.tuvsud.com/-/jssmedia/global/pdf-files/whitepaper-report-e-books/tuvsud-iec62443-whitepaper.pdf", 
+                    "mainTopic": "Norms, standards and frameworks", 
+                    "topics": [
+                        "Norms, standards and frameworks"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        ""
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "Leverage IEC 62443 for EU NIS2 Directive compliance", 
+                    "source": "Leverage IEC 62443 for EU NIS2 Directive compliance", 
+                    "url": "https://www.dnv.com/cyber/insights/articles/leverage-iec-62443-for-eu-nis2-directive-compliance/", 
+                    "mainTopic": "Norms, standards and frameworks", 
+                    "topics": [
+                        "Norms, standards and frameworks"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        ""
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "Practical Overview of Implementing IEC 62443 Security Levels in IACS", 
+                    "source": "Practical Overview of Implementing IEC 62443 Security Levels in IACS", 
+                    "url": "https://download.schneider-electric.com/files?p_Doc_Ref=998-20186845&p_enDocType=White+Paper&p_File_Name=998-20186845_GMA-US.pdf", 
+                    "mainTopic": "Norms, standards and frameworks", 
+                    "topics": [
+                        "Norms, standards and frameworks"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        ""
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "La guida definitiva alla norma IEC 62443 per la sicurezza OT", 
+                    "source": "La guida definitiva alla norma IEC 62443 per la sicurezza OT", 
+                    "url": "https://www.rockwellautomation.com/en-us/company/news/blogs/iec-62443-security-guide.html", 
+                    "mainTopic": "Norms, standards and frameworks", 
+                    "topics": [
+                        "Norms, standards and frameworks"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        ""
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "How to Automate ISA/IEC 62443 Compliance", 
+                    "source": "How to Automate ISA/IEC 62443 Compliance", 
+                    "url": "https://www.parasoft.com/learning-center/automate-isa-iec-62443-compliance/", 
+                    "mainTopic": "SDLC", 
+                    "topics": [
+                        ""
+                    ], 
+                    "tags": [
+                        "62443"
+                    ], 
+                    "excerpts": [
+                        "Addressing software complexity challenges that impede ISA/IEC 62443 compliance requires adopting highly automated testing techniques across the entire SDLC. Let’s check out how highlighting some of the security testing practices below can help organizations identify and remediate vulnerabilities in their ICS at scale.", 
+                        "Code Coverage: Using code coverage tools brings to light which portions of the security code have been duly tested versus untested areas that represent risk. Coverage metrics can be integrated with sequence and ligation independent cloning (SLIC) processes to drive complete security verification in safety-critical and high-risk software modules.", 
+                        "Unit Testing: Comprehensive unit test suites with security tests embedded directly into developer workflows are vital for validating that security requirements are satisfied by implementation code. Unit tests focused on authentication, data encryption, data decryption, access control, input/output validation, error handling, and other security functions provide fast feedback cycles.", 
+                        "Integration Testing: As software integrations proliferate across IACS environments, automated integration tests are imperative for uncovering security vulnerabilities that stem from multi-component interactions. Simulating realistic runtime conditions, integration tests validate correct security configurations and identify breaks caused by connected software dependencies.", 
+                        "Requirements-Based Testing: A core tenet of ISA/IEC 62443 is to design security from initial requirements analysis. By transforming specified security requirements into executable tests, organizations can automatically validate that system behavior correctly implements defined security controls. Requirements traceability reports capture proof that all security requirements were comprehensively implemented and tested.", 
+                        "Static Analysis: Implementing robust static analysis, also known as static application security testing (SAST), ​​is a core practice for identifying security defects early in the SDLC before they become entrenched vulnerabilities. SAST analyzes source code, bytecode, binaries, and build artifacts to detect insecure coding patterns like SQL injection, buffer overflows, cryptography flaws, and more. Advanced SAST techniques also assess complex software compositions by analyzing open source risk, software bills-of-materials (SBOMs), and mapping security guidance.", 
+                        "By applying these testing practices in alignment with ISA/IEC 62443 guidance, organizations can pinpoint and remediate security vulnerabilities in a rapid, cost-effective manner as IACS software evolves. This significantly reduces overall risk while accelerating compliance initiatives."
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "TCS GenAI SDLC Assistant", 
+                    "source": "TCS GenAI SDLC Assistant", 
+                    "url": "https://www.tcs.com/what-we-do/services/cloud/google/solution/tcs-sdlc-assistant", 
+                    "mainTopic": "SDLC", 
+                    "topics": [
+                        
+                    ], 
+                    "tags": [
+                        "Generative AI", 
+                        "Knowledge fabric", 
+                        "SDLC toolchain", 
+                        "Compliance"
+                    ], 
+                    "excerpts": [
+                        "Agentic architecture: Provides a GenAI assistant using Gemini for every persona in the software engineering cycle", 
+                        "Knowledge fabric: Synthesizes disparate knowledge islands within the enterprise, leveraging retrieval-augmented generation (RAG) and consolidates knowledge distributed across the enterprise to ensure the right enterprise context is built when using Gemini", 
+                        "Toolchain integration: Fuses Gemini-augmented knowledge seamlessly into the toolchain specific to each persona within the enterprise’s SDLC toolchain", 
+                        "Realize faster, high-quality software delivery, securely and at a reduced cost.", 
+                        "Better developer experience: Enhances software developers’ productivity and satisfaction by streamlining workflows, enhancing collaboration, and minimizing friction in the development process.", 
+                        "Higher efficiency: Automates activities across all SDLC phases such as generating code, creating user stories, producing and validating test cases, and writing deployment scripts.", 
+                        "Faster speed to production: Accelerates the software development life cycle with easy access to enterprise knowledge for every persona, while allowing the creation of new and rich artifacts that are clear, precise, and detailed enough for smooth flow between personas.", 
+                        "Compliance to enterprise guardrails: Utilizes the knowledge fabric with embedded standards, guidelines, and our responsible AI framework built around security, accountability, fairness, transparency, and information protection to increase compliance with an enterprise’s security, privacy, and responsible AI guardrails."
+                    ], 
+                    "note": [
+                        "Si lega alle connessioni Processi->RAG e Processi->GenAI"
+                    ]
+                 }, 
+                {
+                    "title": "Scopri le nuove soluzioni di vigilanza privata basate sull'Intelligenza Artificiale", 
+                    "source": "Scopri le nuove soluzioni di vigilanza privata basate sull'Intelligenza Artificiale", 
+                    "url": "https://www.axitea.com/it/videoai/?gad_source=2&gclid=Cj0KCQjwjJrCBhCXARIsAI5x66Uzi3Fnjn2DuZfd9APZzMMo1s7zmBCEvpw3Hdf2MFzgv8p0maWoCHMaApsYEALw_wcB", 
+                    "mainTopic": "AI", 
+                    "topics": [
+                        "AI"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        "Sorveglianza attiva: l’intelligenza artificiale monitora continuamente le immagini e riconosce le intrusioni", 
+                        "Tempi di verifica istantanei: l’AI fornisce all’operatore informazioni chiare e precise, consentendo priorità massima verso di intervento alle reali intrusioni", 
+                        "Bassa possibilità di falsi allarmi: l’AI è più precisa nel riconoscere le intrusioni dell’occhio umano", 
+                        "Ecosostenibile: viene inviata la pattuglia solo in caso di necessità"
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "DIGITAL Una mappatura della situazione in Lombardia", 
+                    "source": "DIGITAL Una mappatura della situazione in Lombardia", 
+                    "url": "file:///C:/Users/stfnb/Downloads/DIH%20Lombardia%20-%20Report%20Digital-AI.pdf", 
+                    "mainTopic": "AI", 
+                    "topics": [
+                        "AI"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "Webinar: Industrial Cyber Security: regolamenti e tecnologie di difesa per prevenire il rischio cyber", 
+                    "source": "Webinar: Industrial Cyber Security: regolamenti e tecnologie di difesa per prevenire il rischio cyber", 
+                    "url": "https://europe.txone.com/it/resources/webinar-industrial-cyber-security-regolamenti-e-tecnologie-di-difesa?utm_source=pardot", 
+                    "mainTopic": "Learning", 
+                    "topics": [
+                        "Learning"
+                    ], 
+                    "tags": [
+                        
+                    ], 
+                    "excerpts": [
+                        "Il webinar, organizzato in collaborazione da AC&E e TXOne Networks, ha l’obiettivo di far comprendere le implicazioni concrete di questi cambiamenti.", 
+                        "Verranno illustrate le correlazioni tra le normative esistenti, con l’obiettivo di fornire ai partecipanti una mappa ed una timeline chiara per orientarsi tra i requisiti regolatori e pianificare un percorso di adeguamento.", 
+                        "Sarà presentato un panorama normativo chiaro sull’evoluzione della cybersecurity industriale, con particolare attenzione agli impatti introdotti da tali normative sui costruttori di macchine e sugli utilizzatori finali.", 
+                        "In quest’ottica, attraverso matrici di correlazione tra le principali normative e standard internazionali, verranno delineati i nuovi obblighi per costruttori di macchine, integratori e fornitori di servizi.", 
+                        "Verrà fornita inoltre, con un approccio progressivo alla cybersecurity, una road map, che è già partita nel 2025 e proseguirà fino al 2027, che rappresenti una guida per le aziende nella definizione delle priorità, nell’integrazione dei requisiti, nei processi tecnici e documentali e nella gestione del rischio lungo l’intera filiera produttiva.", 
+                        "Interessanti spunti di riflessione emergeranno dall'analisi di esempi pratici e casi d’uso tipici del mondo OT, con particolare focus sull’adeguamento delle macchine ai nuovi regolamenti."
+                    ], 
+                    "note": [
+                        "Webinar consigliato da Francesco"
+                    ]
+                 }, 
+                {
+                    "title": "Empowering your cybersecurity program so you can focus on what matters", 
+                    "source": "Empowering your cybersecurity program so you can focus on what matters", 
+                    "url": "https://crfsecure.org/", 
+                    "mainTopic": "Learning", 
+                    "topics": [
+                        "Learning", 
+                        "Resource", 
+                        "Policy template"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "Information Security White Papers", 
+                    "source": "Information Security White Papers", 
+                    "url": "https://www.sans.org/white-papers/", 
+                    "mainTopic": "Learning", 
+                    "topics": [
+                        "Learning", 
+                        "Resource", 
+                        "Whitepaper"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "Global Cybersecurity Outlook 2025, INSIGHT REPORT, JANUARY 2025", 
+                    "source": "Global Cybersecurity Outlook 2025, INSIGHT REPORT, JANUARY 2025", 
+                    "url": "https://reports.weforum.org/docs/WEF_Global_Cybersecurity_Outlook_2025.pdf", 
+                    "mainTopic": "Outlook", 
+                    "topics": [
+                        "Outlook"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        "Conclusion: Escalating complexities in cyberspace challenge ecosystem cyber resilience and expose gaps in preparedness. The increasing complexity of cyberspace presents a profound challenge to achieving cyber resilience, exacerbating inequities that leave less-resourced organizations vulnerable. Geopolitical tensions are prompting organizations to re-evaluate their strategies, balancing security concerns with global operations. Such tensions often drive targeted attacks, as state-sponsored actors exploit vulnerabilities for espionage and disruption. This dynamic landscape requires adaptive strategies that account for shifting global risks and supply chain dependencies. At the same time, the growing sophistication of cybercriminals remains a persistent challenge. AIenhanced tactics, Ransomware-as-a-Service and advanced social engineering methods enable threat actors to outpace traditional defences. Addressing these evolving threats demands not only advanced technological solutions but also cross-sector collaboration and knowledge-sharing. Despite these obstacles, there is cause for cautious optimism. Organizations that embrace proactive risk management, prioritize collaborative approaches across ecosystems and invest in scalable, equitable solutions can help reduce disparities. Addressing systemic vulnerabilities – such as supply chain dependencies and skill shortages – will be essential to promoting a resilient digital ecosystem. Ultimately, overcoming today’s challenges requires not just technological innovation but a shift in perspective. Cyber resilience must be recognized as a collective responsibility, with organizations of all sizes working together to fortify the interconnected networks that underpin the digital economy. Further, there is a need for decisive leadership action to prioritize cybersecurity among and between organizations; beyond technical indicators, robust criteria rooted in the economic implications of cyber insecurity will be required. A united leadership team, in which business and cyber leaders see eye to eye on the cyber risks facing the organization, is critical to navigating growing cyber complexity"
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "ABC Digitalizzazione", 
+                    "source": "ABC Digitalizzazione", 
+                    "url": "https://www.dihlombardia.com/news/abc-digitalizzazione", 
+                    "mainTopic": "Outlook", 
+                    "topics": [
+                        "Outlook"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "MASTERCLASS SULLA SICUREZZA INDUSTRIALE: IT- OT & STANDARD IEC 62443", 
+                    "source": "MASTERCLASS SULLA SICUREZZA INDUSTRIALE: IT- OT & STANDARD IEC 62443", 
+                    "url": "https://www.fondazionefenice.it/wp-content/uploads/Masterclass-sulla-Sicurezza-Industriale-1.pdf", 
+                    "mainTopic": "Masterclass", 
+                    "topics": [
+                        ""
+                    ], 
+                    "tags": [
+                        "Masterclass"
+                    ], 
+                    "excerpts": [
+                        
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "Concetto Security Program", 
+                    "source": "Concetto Security Program", 
+                    "url": "https://x.com/i/grok/share/dRHP5hcRiT7kgvo9VksbJ5ZG6", 
+                    "mainTopic": "Masterclass", 
+                    "topics": [
+                        "Masterclass", 
+                        "Concepts"
+                    ], 
+                    "tags": [
+                        "Security Program"
+                    ], 
+                    "excerpts": [
+                        "Un Security Program, in generale, è un insieme strutturato di politiche, processi, procedure, risorse e attività progettate per gestire e mantenere la sicurezza informatica di un'organizzazione o di un sistema specifico. La IEC 62443, che è lo standard di riferimento per la sicurezza dei sistemi IACS, fornisce un quadro per definire e implementare un Security Program in ambienti OT, con un focus su sistemi industriali.", 
+                        "Un’azienda ha generalmente un solo Security Program (CSMS) a livello organizzativo, che riflette la strategia di governance per la Cyber Security. Questo programma copre tutti i sistemi, inclusi gli IACS, ed è gestito centralmente. Tuttavia, all'interno di questo programma, possono esistere implementazioni specifiche (o sotto-programmi) adattate a singoli sistemi IACS o gruppi di sistemi, in base alle loro peculiarità (es. livello di rischio, criticità, requisiti di sicurezza). Queste implementazioni non sono considerate Security Program autonomi, ma piuttosto applicazioni del CSMS generale.", 
+                        "L’ISMS relativo al mondo IT è parte integrante dell’unico Security Program aziendale, così come il CSMS lo è per l’OT. Non si tratta di programmi separati, ma di componenti specializzate che operano sotto un unico ombrello strategico definito dalla governance. In pratica: L’ISMS gestisce la sicurezza delle informazioni nei sistemi IT. Il CSMS gestisce la sicurezza dei sistemi IACS/OT. Il Security Program aziendale (o CSMS in senso lato, secondo la IEC 62443) coordina entrambi, garantendo un approccio unificato."
+                    ], 
+                    "note": [
+                        
+                    ]
+                 }, 
+                {
+                    "title": "Concetti Processo, Procedura, Policy", 
+                    "source": "Concetti Processo, Procedura, Policy", 
+                    "url": "https://x.com/i/grok/share/D2yiVUpcCPmUKNKS6doNlBBKH", 
+                    "mainTopic": "Masterclass", 
+                    "topics": [
+                        "Masterclass", 
+                        "Concepts"
+                    ], 
+                    "tags": [
+                        "Process", 
+                        "Procedure", 
+                        "Policy"
+                    ], 
+                    "excerpts": [
+                        "La distinzione è cruciale: il processo definisce il cosa e il perché, mentre le procedure spiegano il come. Ad esempio, nel processo di 'produzione di un componente meccanico', l'input potrebbe essere una specifica tecnica, l'output il componente finito, mentre la procedura descrive i passaggi per operare una macchina CNC."
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "Concetti Processo, Procedura, Policy 2", 
+                    "source": "Concetti Processo, Procedura, Policy 2", 
+                    "url": "https://x.com/i/grok/share/NbA4hjWepP8N3OYs13WfhFqZh", 
+                    "mainTopic": "Masterclass", 
+                    "topics": [
+                        "Masterclass", 
+                        "Concepts"
+                    ], 
+                    "tags": [
+                        "Process", 
+                        "Procedure", 
+                        "Policy"
+                    ], 
+                    "excerpts": [
+                        "I processi sono più astratti delle procedure, concentrandosi su “cosa” e “perché” piuttosto che su “come”. Forniscono un quadro di alto livello per le attività di sicurezza. I processi sono altamente efficaci per documentare le attività di sicurezza in IEC 62443, poiché garantiscono coerenza negli obiettivi, consentendo flessibilità per adattare le procedure alla cultura, alle risorse e ai vincoli delle diverse unità organizzative. Definendo le attività di sicurezza a livello di processo, le organizzazioni possono raggiungere la conformità con IEC 62443, accomodare approcci culturali diversi e mantenere la verificabilità senza imporre procedure rigide e uniformi."
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "Concetto misurazione/stima, esempio risk assessment", 
+                    "source": "Concetto misurazione/stima, esempio risk assessment", 
+                    "url": "https://x.com/i/grok/share/tb0SmUzBwRbpOUMLXZSt5QLfA", 
+                    "mainTopic": "Masterclass", 
+                    "topics": [
+                        "Masterclass", 
+                        "Concepts"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "Cybersecurity for Industrial Networks Topic 3.1 ISA/IEC 62443", 
+                    "source": "Cybersecurity for Industrial Networks Topic 3.1 ISA/IEC 62443", 
+                    "url": "https://drive.google.com/drive/folders/1WxQh1hGqxwmWXjDQ3uke221eA_jfquRV", 
+                    "mainTopic": "Masterclass", 
+                    "topics": [
+                        "Masterclass", 
+                        "Concepts"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "Threat Hunting in ICS/OT", 
+                    "source": "Threat Hunting in ICS/OT", 
+                    "url": "https://x.com/i/grok/share/fy7PJKP0MfCJy3Fa5Ls4M7PDU", 
+                    "mainTopic": "Masterclass", 
+                    "topics": [
+                        "Masterclass", 
+                        "Concepts"
+                    ], 
+                    "tags": [
+                        "Threat hunting"
+                    ], 
+                    "excerpts": [
+                        "Raccomandazioni per Implementare la Threat Hunting in ICS/OT Creare una baseline operativa: Mappare il comportamento normale di dispositivi e processi per rilevare deviazioni. Investire in visibilità: Installare sensori passivi e configurare SIEM per raccogliere dati OT. Formare team ibridi: Coinvolgere sia esperti IT che ingegneri OT per una caccia efficace. Simulare attacchi: Usare ambienti di test (es. Cyber Range) per esercitarsi su scenari realistici. Aggiornare le conoscenze: Monitorare bollettini CISA, MITRE ATT&CK for ICS e rapporti di threat intelligence specifici per OT."
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "Cybersecurity come Abilitatore Strategico", 
+                    "source": "Cybersecurity come Abilitatore Strategico", 
+                    "url": "https://x.com/i/grok/share/xqjQLwaeZQAast1ptKdKYkAV7", 
+                    "mainTopic": "Masterclass", 
+                    "topics": [
+                        "Masterclass", 
+                        "Concepts"
+                    ], 
+                    "tags": [
+                        "Threat hunting"
+                    ], 
+                    "excerpts": [
+                        "Slide 1: Introduzione - Cybersecurity come Abilitatore Strategico Contesto : Trasformazione aziendale accelerata da tecnologia, normativa, geopolitica ed economia. Ricerca Accenture 2023 : Sondaggio su 3.000 intervistati (2.500 dirigenti sicurezza, 500 leader aziendali) da 15 settori e 14 paesi. Organizzazioni coinvolte : Ricavi annuali ≥ $1 miliardo. Key Insight : La cybersecurity non è solo protezione, ma un fattore chiave per la reinvenzione aziendale.", 
+                        "!!! Fondamentale per analisi strategica !!!"
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "DIH Digital innovation Hub Lombardia", 
+                    "source": "DIH Digital innovation Hub Lombardia", 
+                    "url": "https://www.dihlombardia.com/", 
+                    "mainTopic": "Resource", 
+                    "topics": [
+                        "Resource"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "OT/ICS Managed security services", 
+                    "source": "OT/ICS Managed security services", 
+                    "url": "https://verveindustrial.com/resources/whitepaper/ot-ics-managed-security-services/", 
+                    "mainTopic": "Resource", 
+                    "topics": [
+                        "Resource"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "Webinars - Build an OT Security Roadmap: Expert Strategies for Success", 
+                    "source": "Webinars - Build an OT Security Roadmap: Expert Strategies for Success", 
+                    "url": "https://verveindustrial.com/resources/webinar/recommendations-for-building-and-executing-an-ot-security-roadmap/            ", 
+                    "mainTopic": "Resource", 
+                    "topics": [
+                        "Resource"
+                    ], 
+                    "tags": [
+                        "webinars"
+                    ], 
+                    "excerpts": [
+                        
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "CONFAPI DIGITAL INNOVATION HUB", 
+                    "source": "CONFAPI DIGITAL INNOVATION HUB", 
+                    "url": "https://www.confapi.org/it/ineuropa/confederazione-europea-delle-pmi/50-dih-confapi.html", 
+                    "mainTopic": "Resource", 
+                    "topics": [
+                        "Resource"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "Secure by Demand - Priority Considerations for Operational Technology Owners and Operators when Selecting Digital Products", 
+                    "source": "Secure by Demand - Priority Considerations for Operational Technology Owners and Operators when Selecting Digital Products", 
+                    "url": "https://www.cyber.gov.au/resources-business-and-government/governance-and-user-education/secure-by-design/secure-demand-priority-considerations-operational-technology-owners-and-operators-when-selecting-digital-products", 
+                    "mainTopic": "Resource", 
+                    "topics": [
+                        "Resource"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        "When procuring products, OT owners and operators should select products from manufacturers who prioritize the following security elements:", 
+                        "Configuration management: The product supports controlling and tracking modifications to configuration settings and engineering logic. Seek out manufacturers whose products backup and deploy system configurations in a secure and simple manner.", 
+                        "Logging in the baseline product: The product supports logging of all actions—including changes to configuration, security events, and safety events—in the baseline versions using open standard logging formats. Seek out products that come with standardized access and change logs for building incident response capabilities.", 
+                        "Open standards: The product uses open standards to support secure functions and services and for migrating configuration settings and engineering logic. Seek out products that support open, interoperable standards to facilitate replacing or adding products.", 
+                        "Ownership: The product gives owners and operators full autonomy over said product, including maintenance and changes. Seek out products that enable operator autonomy while minimizing dependency on the vendor.", 
+                        "Protection of data: The product protects the integrity and confidentiality of data, services, and functions, including a product’s configuration settings and engineering logic. Seek out products that treat operational data as valuable and protect it at rest and during transit to and from vendors and manufacturers.", 
+                        "Secure by Default: The product is delivered secure out of the box, reducing the attack surface and removing the burden on owners and operators. Seek out products that include all security features in all versions; eliminate default passwords; allow for appropriate length and complexity for passwords; use secure up-to-date versions of protocols with older insecure protocols (e.g., SNMPv1/2, Telnet, SSL, TLS 1.0/1.1) disabled by default; do not unnecessarily expose external interfaces; and provide authorized users the ability to reset product configuration to its original state.", 
+                        "Secure communications: The product supports secure authenticated communication with digital certificates deployed that fail loudly (e.g., when a certificate expires) but allows critical processes to continue. Seek out products that simplify digital certificate deployment and renewal such that operators do not need to be cyber experts to achieve secure authenticated communications.", 
+                        "Secure controls: The product is resilient to threat actors sending malicious emergency, safety, or diagnostic commands; protects the availability of essential functions; withstands active security scanning; and minimizes the impact of an incident on the overall system. Seek out manufacturers who can demonstrate trusted safety-critical controls and explain how operators can continuously verify and regain that trust.", 
+                        "Strong authentication: The baseline version of the product, especially safety-critical equipment, protects against unauthorized access through appropriate control measures, including role-based access control and phishing-resistant multifactor authentication. Seek out manufacturers that have eliminated the use of shared role-based passwords in their products.", 
+                        "Threat modeling: The product has a full and detailed threat model. Seek out products that have an up-to-date threat model that articulates the ways in which it might be compromised, along with security measures implemented to reduce these threat scenarios.", 
+                        "Vulnerability management: The manufacturer has a comprehensive vulnerability management regime in which products are rigorously tested to help ensure they contain no known exploitable vulnerabilities. Each product has a clearly defined support period during which vulnerabilities are managed and patches are supplied free of charge. Seek out manufacturers who include hardware and software bill of materials with product delivery and who commit to timely remediation of vulnerabilities through a vulnerability disclosure program.", 
+                        "Upgrade and patch tooling: The product has a well-documented and easy to follow patch and upgrade process and supports moving to a supported operating system version at no extra cost if the original operation system is soon to be no longer supported. Seek out products that can be verified and that support owner-controlled patch management."
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }, 
+                {
+                    "title": "Your ONE place for product cybersecurity and compliance", 
+                    "source": "Your ONE place for product cybersecurity and compliance", 
+                    "url": "https://www.onekey.com/", 
+                    "mainTopic": "Solution", 
+                    "topics": [
+                        "Solution"
+                    ], 
+                    "tags": [
+                        ""
+                    ], 
+                    "excerpts": [
+                        "End-to-end solution. Keep your connected devices secure and compliant by design. Meet the software designed for manufacturers and operators to avoid risks along the whole lifecycle – on autopilot."
+                    ], 
+                    "note": [
+                        ""
+                    ]
+                 }
+            ]
+         };
+        // Inizializza l'applicazione
+        let filteredData = [
+            ...jsonData.sources
+        ];
+        function init() {
+            populateFilters();
+            displayResults();
+            setupEventListeners();
+            // Inizializza l'applicazione
+            // Popola le opzioni dei filtri
+        }
+        function populateFilters() {
+            const topics = [
+                ...(new Set(jsonData.sources.map(s => 
+                        s.mainTopic
+                    )))
+                
+            ];
+            const tags = [
+                ...(new Set(jsonData.sources.flatMap(s => 
+                        s.tags
+                    )))
+                
+            ];
+            const sources = [
+                ...(new Set(jsonData.sources.map(s => 
+                        s.source
+                    )))
+                
+            ];
+            populateSelect('topicFilter', topics);
+            populateSelect('tagFilter', tags);
+            populateSelect('sourceFilter', sources);
+            // Popola le opzioni dei filtri
+        }
+        function populateSelect(selectId, options) {
+            const select = document.getElementById(selectId);
+            options.forEach((option) => {
+                const optionElement = document.createElement('option');
+                optionElement.value = option;
+                optionElement.textContent = option;
+                select.appendChild(optionElement);
+            }
+            )
+            // Configura gli event listeners
+        }
+        function setupEventListeners() {
+            document.getElementById('searchInput').addEventListener('input', applyFilters);
+            document.getElementById('topicFilter').addEventListener('change', applyFilters);
+            document.getElementById('tagFilter').addEventListener('change', applyFilters);
+            document.getElementById('sourceFilter').addEventListener('change', applyFilters);
+            // Configura gli event listeners
+            // Applica i filtri
+        }
+        function applyFilters() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const topicFilter = document.getElementById('topicFilter').value;
+            const tagFilter = document.getElementById('tagFilter').value;
+            const sourceFilter = document.getElementById('sourceFilter').value;
+            filteredData = jsonData.sources.filter((source) => {
+                // Filtro ricerca generale
+                // Filtro argomento
+                const searchMatch = !searchTerm || source.title.toLowerCase().includes(searchTerm) || source.source.toLowerCase().includes(searchTerm) || source.mainTopic.toLowerCase().includes(searchTerm) || source.tags.some(tag => 
+                    tag.toLowerCase().includes(searchTerm)
+                ) || source.note.some(note => 
+                    note.toLowerCase().includes(searchTerm)
+                );
+                // Filtro argomento
+                // Filtro tag
+                const topicMatch = !topicFilter || source.mainTopic === topicFilter;
+                // Filtro tag
+                // Filtro fonte
+                const tagMatch = !tagFilter || source.tags.includes(tagFilter);
+                // Filtro fonte
+                const sourceMatch = !sourceFilter || source.source === sourceFilter;
+                return searchMatch && topicMatch && tagMatch && sourceMatch;
+            }
+            )
+            ;
+            displayResults();
+            // Applica i filtri
+            // Mostra i risultati
+        }
+        function displayResults() {
+            const content = document.getElementById('content');
+            const stats = document.getElementById('stats');
+            stats.textContent = `Mostrando ${filteredData.length} di ${jsonData.sources.length} risultati`;
+            if (filteredData.length === 0) {
+                content.innerHTML = `
+                            <div class="no-results">
+                                <h3>🔍 Nessun risultato trovato</h3>
+                                <p>Prova a modificare i filtri o la ricerca</p>
+                            </div>
+                        `;
+                return ;
+            }
+            content.innerHTML = filteredData.map(source => `
+                        <div class="source-card">
+                            <h3 class="source-title">${source.title}</h3>
+                            
+                            <div class="source-meta">
+                                <div class="meta-item">
+                                    <strong>📋 Argomento:</strong> ${source.mainTopic}
+                                </div>
+                                <div class="meta-item">
+                                    <strong>🏢 Fonte:</strong> ${source.source}
+                                </div>
+                            </div>
+        
+                            <div class="source-url">
+                                <strong>🔗 URL:</strong> <a href="${source.url}" target="_blank">${source.url}</a>
+                            </div>
+        
+                            ${
+                source.tags && source.tags.length > 0
+                 ? `
+                                <div class="tags-container">
+                                    <h4>🏷️ Tag</h4>
+                                    <div class="tags">
+                                        ${source.tags.map(tag => `<span class="tag">${tag}</span>`
+                    ).join('')
+                    }
+                                    </div>
+                                </div>
+                            `
+                 : ''}
+                
+        
+                            ${
+                source.excerpts && source.excerpts.length > 0
+                 ? `
+                                <div class="excerpts">
+                                    <h4>📝 Estratti</h4>
+                                    ${source.excerpts.map(excerpt => `<div class="excerpt">${excerpt}</div>`
+                    ).join('')
+                    }
+                                </div>
+                            `
+                 : ''}
+                
+        
+                            ${
+                source.note && source.note.length > 0
+                 ? `
+                                <div class="note">
+                                    <strong>📌 Note:</strong> ${source.note.join('; ')}
+                                </div>
+                            `
+                 : ''}
+                
+                        </div>
+                    `
+            ).join('')
+            ;
+            // Mostra i risultati
+            // Cancella tutti i filtri
+        }
+        function clearAllFilters() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('topicFilter').value = '';
+            document.getElementById('tagFilter').value = '';
+            document.getElementById('sourceFilter').value = '';
+            applyFilters();
+            // Cancella tutti i filtri
+            // Avvia l'applicazione
+        }
+        // Avvia l'applicazione
+        init();
+    </script>
+</body>
+
+</html>

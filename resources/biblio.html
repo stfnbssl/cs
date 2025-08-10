@@ -1,0 +1,1232 @@
+<!--
+    artifact generator: C:\My\wizzi\stfnbssl\wizzi.plugins\packages\wizzi.plugin.html\lib\artifacts\html\document\gen\main.js
+    package: @wizzi/plugin.html@0.8.10
+    primary source IttfDocument: C:\My\wizzi\stfnbssl\lavori\logbot-cybersecurity\packages\digital-core\.wizzi\site\resources\biblio.html.ittf
+    utc time: Tue, 15 Jul 2025 05:56:53 GMT
+-->
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ISA/IEC 62443 Resources</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            -webkit-border-radius: 20px;
+            -khtml-border-radius: 20px;
+            -moz-border-radius: 20px;
+            -o-border-radius: 20px;
+            border-radius: 20px;
+            -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            -o-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .controls {
+            padding: 30px 40px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .search-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .search-input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            font-size: 16px;
+            border: 2px solid #e9ecef;
+            -webkit-border-radius: 50px;
+            -khtml-border-radius: 50px;
+            -moz-border-radius: 50px;
+            -o-border-radius: 50px;
+            border-radius: 50px;
+            outline: none;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        .search-input:focus {
+            border-color: #3498db;
+            -webkit-box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+            -moz-box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+            -o-box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transition: translateY(-50%);
+            transform: translateY(-50%);
+            color: #6c757d;
+            font-size: 18px;
+        }
+        .filter-buttons {
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            gap: 10px;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 10px 20px;
+            border: 2px solid #e9ecef;
+            background: white;
+            -webkit-border-radius: 25px;
+            -khtml-border-radius: 25px;
+            -moz-border-radius: 25px;
+            -o-border-radius: 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .filter-btn:hover {
+            background: #f8f9fa;
+            -webkit-transform: translateY(-2px);
+            -ms-transition: translateY(-2px);
+            transform: translateY(-2px);
+        }
+        .filter-btn.active {
+            background: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+        .results-count {
+            text-align: center;
+            padding: 20px;
+            color: #6c757d;
+            font-style: italic;
+        }
+        .links-container {
+            padding: 0 40px 40px;
+        }
+        .link-card {
+            background: white;
+            -webkit-border-radius: 15px;
+            -khtml-border-radius: 15px;
+            -moz-border-radius: 15px;
+            -o-border-radius: 15px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            -o-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+            overflow: hidden;
+            opacity: 1;
+            -webkit-transform: translateY(0);
+            -ms-transition: translateY(0);
+            transform: translateY(0);
+        }
+        .link-card:hover {
+            -webkit-transform: translateY(-5px);
+            -ms-transition: translateY(-5px);
+            transform: translateY(-5px);
+            -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            -moz-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            -o-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        .link-card.hidden {
+            opacity: 0;
+            -webkit-transform: translateY(20px);
+            -ms-transition: translateY(20px);
+            transform: translateY(20px);
+            pointer-events: none;
+            margin-bottom: 0;
+            height: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .card-header {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .card-title::before {
+            content: "📋";
+            font-size: 1.2rem;
+        }
+        .card-url {
+            color: #3498db;
+            font-size: 0.9rem;
+            -webkit-text-decoration: none;
+            text-decoration: none;
+            word-break: break-all;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .card-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .card-actions {
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            gap: 10px;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 8px 16px;
+            -webkit-border-radius: 20px;
+            -khtml-border-radius: 20px;
+            -moz-border-radius: 20px;
+            -o-border-radius: 20px;
+            border-radius: 20px;
+            -webkit-text-decoration: none;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            display: -webkit-inline-box;
+            display: -webkit-inline-flex;
+            display: -ms-inline-flexbox;
+            display: inline-flex;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-primary {
+            background: #3498db;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #2980b9;
+            -webkit-transform: translateY(-1px);
+            -ms-transition: translateY(-1px);
+            transform: translateY(-1px);
+        }
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #6c757d;
+            border: 1px solid #e9ecef;
+        }
+        .btn-secondary:hover {
+            background: #e9ecef;
+        }
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: #6c757d;
+        }
+        .no-results h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .fade-in {
+            -webkit-animation: fadeIn 0.5s ease-in;
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            fadeIn from {
+                opacity: 0;
+                -webkit-transform: translateY(20px);
+                -ms-transition: translateY(20px);
+                transform: translateY(20px);
+            }
+            fadeIn to {
+                opacity: 1;
+                -webkit-transform: translateY(0);
+                -ms-transition: translateY(0);
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                -webkit-border-radius: 15px;
+                -khtml-border-radius: 15px;
+                -moz-border-radius: 15px;
+                -o-border-radius: 15px;
+                border-radius: 15px;
+            }
+            .header {
+                padding: 30px 20px;
+            }
+            .header h1 {
+                font-size: 2rem;
+            }
+            .controls, .links-container {
+                padding: 20px;
+            }
+            .filter-buttons {
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ISA/IEC 62443 Resources</h1>
+            <p>Standard per la Cybersecurity Industriale</p>
+        </div>
+        <div class="controls">
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="Cerca per titolo, descrizione o URL..." />
+                <span class="search-icon">🔍</span>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Tutti</button>
+                <button class="filter-btn" data-filter="guide">Guide</button>
+                <button class="filter-btn" data-filter="standard">Standard</button>
+                <button class="filter-btn" data-filter="overview">Overview</button>
+            </div>
+        </div>
+        <div id="resultsCount" class="results-count">
+            Mostrando 2 risorse
+        </div>
+        <div id="linksContainer" class="links-container">
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">Effective ICS Cybersecurity Using the IEC 62443 Standard</h2>
+                    <a href="https://www.sans.org/white-papers/39960/" class="card-url" target="_blank">https://www.sans.org/white-papers/39960/
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.sans.org/white-papers/39960/" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.sans.org/white-papers/39960/')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">IEC 62443 Industrial Security Standards (TÜV SÜD)</h2>
+                    <a href="https://www.tuvsud.com/-/jssmedia/global/pdf-files/whitepaper-report-e-books/tuvsud-iec62443-whitepaper.pdf" class="card-url" target="_blank">https://www.tuvsud.com/-/jssmedia/global/pdf-files/whitepaper-report-e-books/tuvsud-iec62443-whitepaper.pdf
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.tuvsud.com/-/jssmedia/global/pdf-files/whitepaper-report-e-books/tuvsud-iec62443-whitepaper.pdf" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.tuvsud.com/-/jssmedia/global/pdf-files/whitepaper-report-e-books/tuvsud-iec62443-whitepaper.pdf')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">Practical Overview of Implementing IEC 62443 Security Levels in Industrial</h2>
+                    <a href="https://www.se.com/us/en/download/document/998-20186845/" class="card-url" target="_blank">https://www.se.com/us/en/download/document/998-20186845/
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.se.com/us/en/download/document/998-20186845/" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.se.com/us/en/download/document/998-20186845/')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">Xilinx IEC 62443 Compliant Product Enablement White Paper (WP513)</h2>
+                    <a href="https://docs.amd.com/v/u/en-US/wp513_iec62443" class="card-url" target="_blank">https://docs.amd.com/v/u/en-US/wp513_iec62443
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://docs.amd.com/v/u/en-US/wp513_iec62443" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://docs.amd.com/v/u/en-US/wp513_iec62443')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">Journey to ISA/IEC 62443 Readiness with Hardware‑enabled Security (Intel)</h2>
+                    <a href="https://www.intel.com/content/www/us/en/content-details/732195/journey-to-isa-iec-62443-readiness-with-hardware-enabled-security-powered-by-intel-technology-white-paper.html" class="card-url" target="_blank">https://www.intel.com/content/www/us/en/content-details/732195/journey-to-isa-iec-62443-readiness-with-hardware-enabled-security-powered-by-intel-technology-white-paper.html
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.intel.com/content/www/us/en/content-details/732195/journey-to-isa-iec-62443-readiness-with-hardware-enabled-security-powered-by-intel-technology-white-paper.html" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.intel.com/content/www/us/en/content-details/732195/journey-to-isa-iec-62443-readiness-with-hardware-enabled-security-powered-by-intel-technology-white-paper.html')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">Zero Trust Outcomes Using ISA/IEC 62443 Standards</h2>
+                    <a href="https://isagca.org/hubfs/2023%20ISA%20Website%20Redesigns/ISAGCA/PDFs/ISAGCA%20Zero%20Trust.pdf" class="card-url" target="_blank">https://isagca.org/hubfs/2023%20ISA%20Website%20Redesigns/ISAGCA/PDFs/ISAGCA%20Zero%20Trust.pdf
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://isagca.org/hubfs/2023%20ISA%20Website%20Redesigns/ISAGCA/PDFs/ISAGCA%20Zero%20Trust.pdf" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://isagca.org/hubfs/2023%20ISA%20Website%20Redesigns/ISAGCA/PDFs/ISAGCA%20Zero%20Trust.pdf')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">Securing Digital Manufacturing: The Essence of ISA/IEC 62443 Implementation</h2>
+                    <a href="https://www.txone.com/white-papers/essence-of-isa-iec-62443-implementation/" class="card-url" target="_blank">https://www.txone.com/white-papers/essence-of-isa-iec-62443-implementation/
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.txone.com/white-papers/essence-of-isa-iec-62443-implementation/" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.txone.com/white-papers/essence-of-isa-iec-62443-implementation/')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">PI White Paper: OT‑Security – Classification of IEC62443</h2>
+                    <a href="https://www.profibus.com/download/white-paper-ot-security-classification-of-iec62443" class="card-url" target="_blank">https://www.profibus.com/download/white-paper-ot-security-classification-of-iec62443
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.profibus.com/download/white-paper-ot-security-classification-of-iec62443" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.profibus.com/download/white-paper-ot-security-classification-of-iec62443')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">ISA‑IEC 62443 Series of Standards (overview)</h2>
+                    <a href="https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series-of-standards" class="card-url" target="_blank">https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series-of-standards
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series-of-standards" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series-of-standards')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">SP 800‑82 Rev. 3, Guide to Operational Technology (OT) Security</h2>
+                    <a href="https://csrc.nist.gov/pubs/sp/800/82/r3/ipd" class="card-url" target="_blank">https://csrc.nist.gov/pubs/sp/800/82/r3/ipd
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://csrc.nist.gov/pubs/sp/800/82/r3/ipd" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://csrc.nist.gov/pubs/sp/800/82/r3/ipd')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">PDF: Guide to Operational Technology (OT) Security (SP 800‑82r3)</h2>
+                    <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82r3.pdf" class="card-url" target="_blank">https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82r3.pdf
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82r3.pdf" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82r3.pdf')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">NIST Publishes Guide to Operational Technology (OT) Security</h2>
+                    <a href="https://www.nist.gov/news-events/news/2023/09/nist-publishes-guide-operational-technology-ot-security" class="card-url" target="_blank">https://www.nist.gov/news-events/news/2023/09/nist-publishes-guide-operational-technology-ot-security
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.nist.gov/news-events/news/2023/09/nist-publishes-guide-operational-technology-ot-security" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.nist.gov/news-events/news/2023/09/nist-publishes-guide-operational-technology-ot-security')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">NIST SP 800‑82 Rev. 2, Guide to Industrial Control Systems (ICS) Security</h2>
+                    <a href="https://csrc.nist.gov/pubs/sp/800/82/r2/final" class="card-url" target="_blank">https://csrc.nist.gov/pubs/sp/800/82/r2/final
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://csrc.nist.gov/pubs/sp/800/82/r2/final" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://csrc.nist.gov/pubs/sp/800/82/r2/final')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">The Essential Guide to the NIST SP 800‑82 Document</h2>
+                    <a href="https://industrialcyber.co/nist/the-essential-guide-to-the-nist-sp-800-82-document/" class="card-url" target="_blank">https://industrialcyber.co/nist/the-essential-guide-to-the-nist-sp-800-82-document/
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://industrialcyber.co/nist/the-essential-guide-to-the-nist-sp-800-82-document/" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://industrialcyber.co/nist/the-essential-guide-to-the-nist-sp-800-82-document/')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">ICS/OT Security: Insights from NIST Guide</h2>
+                    <a href="https://www.cloudrangecyber.com/news/icsot-security-insights-from-nist-guide" class="card-url" target="_blank">https://www.cloudrangecyber.com/news/icsot-security-insights-from-nist-guide
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.cloudrangecyber.com/news/icsot-security-insights-from-nist-guide" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.cloudrangecyber.com/news/icsot-security-insights-from-nist-guide')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">Cyber security of OT networks: A tutorial and overview</h2>
+                    <a href="https://arxiv.org/abs/2502.14017" class="card-url" target="_blank">https://arxiv.org/abs/2502.14017
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://arxiv.org/abs/2502.14017" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://arxiv.org/abs/2502.14017')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">Vulnerabilities and Attacks Against Industrial Control Systems and Critical Infrastructures</h2>
+                    <a href="https://arxiv.org/abs/2109.03945" class="card-url" target="_blank">https://arxiv.org/abs/2109.03945
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://arxiv.org/abs/2109.03945" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://arxiv.org/abs/2109.03945')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">Secure Links: Secure‑by‑Design Communications in IEC 61499 Industrial Control Applications</h2>
+                    <a href="https://arxiv.org/abs/2107.11537" class="card-url" target="_blank">https://arxiv.org/abs/2107.11537
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://arxiv.org/abs/2107.11537" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://arxiv.org/abs/2107.11537')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">Cybersecurity for Industrial Control Systems: A Survey</h2>
+                    <a href="https://arxiv.org/abs/2002.04124" class="card-url" target="_blank">https://arxiv.org/abs/2002.04124
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://arxiv.org/abs/2002.04124" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://arxiv.org/abs/2002.04124')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">Cyber PHA – Cyber Process Hazards Analysis overview</h2>
+                    <a href="https://en.wikipedia.org/wiki/Cyber_PHA" class="card-url" target="_blank">https://en.wikipedia.org/wiki/Cyber_PHA
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://en.wikipedia.org/wiki/Cyber_PHA" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://en.wikipedia.org/wiki/Cyber_PHA')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">ISA/IEC 62443 Quick Start Guide</h2>
+                    <a href="https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series" class="card-url" target="_blank">https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        Guida introduttiva gratuita di ISA che offre una panoramica user-friendly degli standard ISA/IEC 62443 per la cybersecurity industriale.
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">IEC 62443 Standards Overview</h2>
+                    <a href="https://www.iec.ch/system/files/2023-04/IEC_62443_Overview.pdf" class="card-url" target="_blank">https://www.iec.ch/system/files/2023-04/IEC_62443_Overview.pdf
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        Estratto ufficiale della IEC che descrive i principi base e la struttura della serie IEC 62443.
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.iec.ch/system/files/2023-04/IEC_62443_Overview.pdf" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.iec.ch/system/files/2023-04/IEC_62443_Overview.pdf')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">NIST Cybersecurity Framework (CSF) 2.0</h2>
+                    <a href="https://www.nist.gov/cyberframework" class="card-url" target="_blank">https://www.nist.gov/cyberframework
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        Framework NIST CSF 2.0, disponibile gratuitamente, con linee guida per la gestione dei rischi di cybersecurity.
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.nist.gov/cyberframework" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.nist.gov/cyberframework')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">NIST SP 800-82: Guide to OT Security</h2>
+                    <a href="https://csrc.nist.gov/publications/detail/sp/800-82/rev-3/final" class="card-url" target="_blank">https://csrc.nist.gov/publications/detail/sp/800-82/rev-3/final
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        Guida NIST per la sicurezza dei sistemi di controllo industriale (OT), scaricabile gratuitamente.
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://csrc.nist.gov/publications/detail/sp/800-82/rev-3/final" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://csrc.nist.gov/publications/detail/sp/800-82/rev-3/final')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">ENISA Good Practices for ICS Cybersecurity</h2>
+                    <a href="https://www.enisa.europa.eu/publications/good-practices-for-security-of-iot" class="card-url" target="_blank">https://www.enisa.europa.eu/publications/good-practices-for-security-of-iot
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        Documento ENISA con pratiche consigliate per la sicurezza dei sistemi ICS e IoT.
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.enisa.europa.eu/publications/good-practices-for-security-of-iot" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.enisa.europa.eu/publications/good-practices-for-security-of-iot')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">ENISA Threat Landscape for Industrial Systems 2024</h2>
+                    <a href="https://www.enisa.europa.eu/publications/threat-landscape-for-industrial-systems-2024" class="card-url" target="_blank">https://www.enisa.europa.eu/publications/threat-landscape-for-industrial-systems-2024
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        Rapporto ENISA sulle minacce informatiche per sistemi industriali, aggiornato al 2024.
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.enisa.europa.eu/publications/threat-landscape-for-industrial-systems-2024" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.enisa.europa.eu/publications/threat-landscape-for-industrial-systems-2024')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">CISA ICS Cybersecurity Best Practices</h2>
+                    <a href="https://www.cisa.gov/topics/industrial-control-systems" class="card-url" target="_blank">https://www.cisa.gov/topics/industrial-control-systems
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        Linee guida gratuite di CISA per la sicurezza dei sistemi di controllo industriale.
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.cisa.gov/topics/industrial-control-systems" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.cisa.gov/topics/industrial-control-systems')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">CISA Cross-Sector Cybersecurity Performance Goals</h2>
+                    <a href="https://www.cisa.gov/cross-sector-cybersecurity-performance-goals" class="card-url" target="_blank">https://www.cisa.gov/cross-sector-cybersecurity-performance-goals
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        Obiettivi di performance di CISA che includono riferimenti a IEC 62443, scaricabili gratuitamente.
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.cisa.gov/cross-sector-cybersecurity-performance-goals" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.cisa.gov/cross-sector-cybersecurity-performance-goals')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">ISA Global Cybersecurity Alliance Resources</h2>
+                    <a href="https://gca.isa.org/resources" class="card-url" target="_blank">https://gca.isa.org/resources
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        Raccolta di white paper e risorse gratuite di ISAGCA su ISA/IEC 62443 e OT cybersecurity.
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://gca.isa.org/resources" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://gca.isa.org/resources')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">ISO/IEC 27001 Overview</h2>
+                    <a href="https://www.iso.org/standard/27001" class="card-url" target="_blank">https://www.iso.org/standard/27001
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        Panoramica gratuita dello standard ISO/IEC 27001 per la gestione della sicurezza delle informazioni.
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.iso.org/standard/27001" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.iso.org/standard/27001')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">NIST CSF Quick Start Guide</h2>
+                    <a href="https://www.nist.gov/cyberframework/getting-started" class="card-url" target="_blank">https://www.nist.gov/cyberframework/getting-started
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        Guida introduttiva al NIST CSF per iniziare a implementare il framework.
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.nist.gov/cyberframework/getting-started" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.nist.gov/cyberframework/getting-started')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">ENISA Cybersecurity Training Material</h2>
+                    <a href="https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists" class="card-url" target="_blank">https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        Materiale di formazione gratuito di ENISA per specialisti della cybersecurity, con focus su ICS.
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">Confindustria Cybersecurity Resources for SMEs</h2>
+                    <a href="https://www.confindustria.it/aree-tematiche/sicurezza-informatica" class="card-url" target="_blank">https://www.confindustria.it/aree-tematiche/sicurezza-informatica
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        Risorse e guide gratuite di Confindustria per la cybersecurity delle PMI italiane.
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.confindustria.it/aree-tematiche/sicurezza-informatica" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.confindustria.it/aree-tematiche/sicurezza-informatica')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">ISA/IEC 62443-3-3 System Security Requirements</h2>
+                    <a href="https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series" class="card-url" target="_blank">https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        Estratti gratuiti delle specifiche di sicurezza di sistema della IEC 62443-3-3.
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">CISA Cybersecurity Awareness Resources</h2>
+                    <a href="https://www.cisa.gov/cybersecurity-awareness-month" class="card-url" target="_blank">https://www.cisa.gov/cybersecurity-awareness-month
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        Materiale educativo gratuito di CISA per sensibilizzare sulla cybersecurity.
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.cisa.gov/cybersecurity-awareness-month" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.cisa.gov/cybersecurity-awareness-month')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">NIST Cybersecurity Framework Profile for Manufacturing</h2>
+                    <a href="https://csrc.nist.gov/publications/detail/nistir/8183/rev-1/final" class="card-url" target="_blank">https://csrc.nist.gov/publications/detail/nistir/8183/rev-1/final
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        Profilo NIST CSF specifico per il settore manifatturiero, scaricabile gratuitamente.
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://csrc.nist.gov/publications/detail/nistir/8183/rev-1/final" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://csrc.nist.gov/publications/detail/nistir/8183/rev-1/final')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">ENISA Guidelines for SMEs on Cybersecurity</h2>
+                    <a href="https://www.enisa.europa.eu/publications/cybersecurity-for-smes" class="card-url" target="_blank">https://www.enisa.europa.eu/publications/cybersecurity-for-smes
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        Guida ENISA per le PMI su come implementare misure di cybersecurity.
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.enisa.europa.eu/publications/cybersecurity-for-smes" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.enisa.europa.eu/publications/cybersecurity-for-smes')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">ISA Cybersecurity Webinars</h2>
+                    <a href="https://www.isa.org/events-and-training/webinars" class="card-url" target="_blank">https://www.isa.org/events-and-training/webinars
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        Webinar gratuiti di ISA su ISA/IEC 62443 e sicurezza OT.
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.isa.org/events-and-training/webinars" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.isa.org/events-and-training/webinars')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">IEC 62443 Security Levels Explained</h2>
+                    <a href="https://www.iec.ch/system/files/2023-06/IEC_62443_Security_Levels.pdf" class="card-url" target="_blank">https://www.iec.ch/system/files/2023-06/IEC_62443_Security_Levels.pdf
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        Documento IEC che spiega i livelli di sicurezza (SL) della IEC 62443, disponibile gratuitamente.
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.iec.ch/system/files/2023-06/IEC_62443_Security_Levels.pdf" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.iec.ch/system/files/2023-06/IEC_62443_Security_Levels.pdf')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div data-keywords class="link-card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title">Confindustria Webinar on Cybersecurity for SMEs</h2>
+                    <a href="https://www.confindustria.it/eventi/webinar-sicurezza-informatica" class="card-url" target="_blank">https://www.confindustria.it/eventi/webinar-sicurezza-informatica
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        Webinar gratuiti di Confindustria su temi di cybersecurity per le PMI.
+                    </p>
+                    <div class="card-actions">
+                        <a href="https://www.confindustria.it/eventi/webinar-sicurezza-informatica" class="btn btn-primary" target="_blank">🔗 Visita Risorsa
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('https://www.confindustria.it/eventi/webinar-sicurezza-informatica')">
+                            📋 Copia Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="noResults" style="display: none;" class="no-results">
+            <h3>Nessun risultato trovato</h3>
+            <p>Prova a modificare i termini di ricerca o i filtri</p>
+        </div>
+    </div>
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const linkCards = document.querySelectorAll('.link-card');
+        const resultsCount = document.getElementById('resultsCount');
+        const noResults = document.getElementById('noResults');
+        // Search functionality
+        let currentFilter = 'all';
+        // Search functionality
+        // Filter functionality
+        searchInput.addEventListener('input', function() {
+            filterLinks();
+        })
+        // Filter functionality
+        filterButtons.forEach(btn => 
+            btn.addEventListener('click', function() {
+                // Update active button
+                filterButtons.forEach(b => 
+                    b.classList.remove('active')
+                )
+                this.classList.add('active');
+                currentFilter = this.getAttribute('data-filter');
+                filterLinks();
+            })
+        )
+        function filterLinks() {
+            const searchTerm = searchInput.value.toLowerCase();
+            let visibleCount = 0;
+            // Update results count
+            linkCards.forEach((card) => {
+                const keywords = card.getAttribute('data-keywords').toLowerCase();
+                const title = card.querySelector('.card-title').textContent.toLowerCase();
+                const description = card.querySelector('.card-description').textContent.toLowerCase();
+                const url = card.querySelector('.card-url').textContent.toLowerCase();
+                const searchContent = `${keywords} ${title} ${description} ${url}`;
+                const matchesSearch = searchContent.includes(searchTerm);
+                let matchesFilter = true;
+                if (currentFilter !== 'all') {
+                    matchesFilter = keywords.includes(currentFilter);
+                }
+                if (matchesSearch && matchesFilter) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                }
+                else {
+                    card.classList.add('hidden');
+                }
+            }
+            )
+            if (visibleCount === 0) {
+                resultsCount.style.display = 'none';
+                noResults.style.display = 'block';
+            }
+            else {
+                resultsCount.style.display = 'block';
+                noResults.style.display = 'none';
+                resultsCount.textContent = `Mostrando ${visibleCount} ${
+                visibleCount === 1
+                 ? 'risorsa'
+                 : 'risorse'}
+                `;
+            }
+            // Copy to clipboard functionality
+        }
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                // Show temporary success message
+                const btn = event.target;
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '✅ Copiato!';
+                btn.style.background = '#27ae60';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = '';
+                }
+                , 2000)
+            }).catch(function(err) {
+                console.error('Errore nella copia: ', err);
+            })
+            // Copy to clipboard functionality
+            // Add smooth scrolling for better UX
+        }
+        // Add smooth scrolling for better UX
+        // Add keyboard shortcuts
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => 
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                 })
+            })
+        )
+        // Add keyboard shortcuts
+        // Initialize
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
+                e.preventDefault();
+                searchInput.focus();
+            }
+            if (e.key === 'Escape' && document.activeElement === searchInput) {
+                searchInput.value = '';
+                filterLinks();
+            }
+        })
+        // Initialize
+        filterLinks();
+    </script>
+</body>
+
+</html>
